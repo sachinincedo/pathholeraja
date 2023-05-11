@@ -1,0 +1,45 @@
+<div class="outer-box">
+    <div class="container without-border">
+        <div>
+            <app-header></app-header>
+        </div>
+        <div class="container-fluid space-header-below">
+            <div class="row">   
+              <div class="col-xl-12 col-lg-12 mb-4">
+                <div class="bg-white rounded-lg p-3 shadow">
+                  <div class="box">
+                    <div class="percent">
+                      <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70"></circle>
+                      </svg>
+                      <div class="num">
+                        <h2>{{ TotalPotHoleReported }}</h2>
+                      </div>
+                    </div>
+                    <h4 class="text">Total Potholes Reported</h4>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="col-xl-12 col-lg-12 mb-4">
+                <div class="bg-white rounded-lg p-3 shadow">
+                  <div class="box" routerLink="../status-pothole">
+                    <div class="percent-2">
+                      <svg >
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70"></circle>
+                      </svg>
+                      <div class="num">
+                        <h2>{{  PotholeIReported }}</h2>
+                      </div>
+                    </div>
+                    <h4 class="text">PotHoles I Reported</h4>
+                  </div>
+                  <!-- END -->
+                </div>
+              </div> 
+            </div>
+          </div>
+    </div>
+</div>

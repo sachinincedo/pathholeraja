@@ -1,0 +1,71 @@
+<div class="outer-box">
+    <div class="container-fluid without-border">
+        <div>
+            <app-header></app-header>
+        </div>
+        <form class="space-header-below">
+        <div class="card">
+            <div class="step1">
+                <p>Step 1 - Take a picture ( Not Mandatory) </p>
+                <span>Please upload an image for the pothole</span>
+            </div>
+            <div class="uplaod-box">
+                  <div class="image-upload">
+                    <!-- <label for="fileUpload">Select file: </label> -->
+                    <input class="box-feild" type="file" id="fileUpload" (change)="onFileSelected($event)" required>
+                    <input class="result-feild" type="text" id="fileName" [value]="fileName" readonly>
+                    <!-- <button type="button" id="clearFile" (click)="onClearFile()">Clear</button> -->
+                  </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="step2">
+                <p>Step 2 - Location* (  Mandatory) </p>
+                <span>Are you in location where the pothole is ?</span>
+            </div>
+            <div class="radio-btn">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input"  [(ngModel)]="atlocation" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required />
+                    <label class="form-check-label step1" for="inlineRadio1">Yes</label>
+                  </div>
+                  
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input"  [(ngModel)]="atlocation" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required/>
+                    <label class="form-check-label step1" for="inlineRadio2">No</label>
+                  </div>
+                  
+            </div>
+            <div class="step3">
+                <div class="step3">
+                    <span> Addition Information</span>
+                </div>
+                <div class="more-info">
+                    <p> Please Give us the crossroads of this pothole</p>
+                </div>
+                <div>
+                    
+                        <div class="form-outline mb-4">
+                            <input type="text" id="form7Example4" class="form-control"  [(ngModel)]="crossRoad1"  placeholder="Cross Road 1" required/>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" id="form7Example4" class="form-control"  [(ngModel)]="crossRoad2" placeholder="Cross Road 2" required/>
+                        </div>
+               
+                </div>
+                <div class="additional-desc">
+                    <p> Addition Description</p> 
+                        <div class="form-outline mb-4">
+                            <textarea class="form-control" id="form7Example7" rows="3"  [(ngModel)]="additionalDesc" placeholder="Example: Opposite to Canara Bank at the dge of road"></textarea>
+                            <!-- <label class="form-label" for="form7Example7">Additional information</label> -->
+                          </div>
+                </div>
+                 <div class="submit-class">
+                    <button (click)="reportPothole()" type="submit" class="btn-submit" >Submit</button>
+                 </div>
+            </div>
+        </div>
+    </form>
+
+
+    </div>
+</div>

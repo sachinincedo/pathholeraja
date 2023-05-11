@@ -1,0 +1,23 @@
+.heading-login{
+    height: 20%;
+    text-align: center;
+    margin-top: 10%;
+}
+.account-line{
+    font-size: small;
+}
+.account-line a{
+    font-weight: bold;
+    color: aliceblue;
+}
+.account-line a:hover{
+    color: blue;
+}
+.width{
+    padding: 20px;
+}
+
+.btn-block a{
+    color: white !important;
+    font-weight: 500;
+}

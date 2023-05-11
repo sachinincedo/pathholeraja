@@ -1,0 +1,48 @@
+<div class="outer-box">
+    <div class="container-fluid without-border">
+        <div>
+            <app-header></app-header>
+        </div>
+        <div class="card space-header-below">
+            <div class="heading-status">
+                 <p>Status Of Potholes Reported By You</p>
+                 <hr/>
+            </div>
+            <div class="heading-topic">
+                  <div class="row">
+                    <div class="col-3 sp"> Pothole ID</div>
+                    <div class="col-3 sp"> Status </div>
+                    <div class="col-3 sp"> PinCode</div>
+                    <div class="col-3 sp-last"> Reported On</div>
+                  </div>
+                  <div *ngIf="items.length < 1">
+                    <p>No items to display</p>
+                  </div>
+                  <div class="row" *ngFor="let item of items| slice:0:showCountOfPost; let i=index" >
+                      <div *ngIf="items.length > 1" class="col-3 dis">
+                        <p>{{item.id}}</p>
+                        <span class="status-outer">
+                            <div [ngClass]="{
+                                'status-box-fixed': item.status==='Fixed',
+                                'status-box-progress': item.status==='WIP',
+                                'status-box-not-started': item.status==='Not Started'}">   
+                            </div>
+                        </span>
+                      </div>
+                      <div class="col-3">
+                        <p>{{ item.status }}</p>
+                      </div>
+                      <div class="col-3">
+                        <p>{{ item.Pincode }}</p>
+                      </div>
+                      <div  class="col-3 sp-last">
+                        <p>{{item.ReportedOn}}</p>
+                      </div>
+                    </div>
+            </div> 
+        </div>
+       <div class="show-more-div">
+        <button  class="btn-show-more" *ngIf="showCountOfPost < items.length && items.length >0 " (click)="showMore()">Show more</button>
+       </div>
+    </div>
+</div>

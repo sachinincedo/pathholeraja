@@ -1,0 +1,23 @@
+.version{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 10px;
+    font-size: small;
+}
+.heading-splash{
+    text-align: center;
+    margin-top: 10px;
+    font-size: small;
+}
+.img-space{
+    margin-bottom: 10px;
+}
+.img-space img{
+    width: 100%;
+    height: 100%;
+}
+.images-volunteer{
+    height: 70%;
+}

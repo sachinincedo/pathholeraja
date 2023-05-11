@@ -1,0 +1,18 @@
+.heading-signup{
+    text-align: center;
+    font-size: medium;
+    margin-top: 15px;
+}
+.account-line{
+    font-size: small;
+}
+.account-line a{
+    font-weight: bold;
+    color: aliceblue;
+}
+.account-line a:hover{
+    color: blue;
+}
+.width{
+    padding: 20px;
+}

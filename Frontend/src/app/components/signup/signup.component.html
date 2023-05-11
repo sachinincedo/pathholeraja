@@ -1,0 +1,31 @@
+<div class="outer-box">
+    <div class="container-fluid without-border">
+        <div class="heading-signup">
+            <h2 class="fw-bold ">Create A Login</h2>
+            <hr/>
+        </div>
+        <form class="width"  >
+            <!-- First Name input -->
+            <div class="form-outline mb-4">
+                <input type="text" id="firstName" class="form-control" [(ngModel)]="firstName" placeholder="First Name" required/>
+            </div>
+            <!-- Last Name input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="lastName" class="form-control" [(ngModel)]="lastName" placeholder="Last Name" required/>
+            </div>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="email" class="form-control"[(ngModel)]="email" placeholder="Email Id" required />
+            </div>
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" id="password" class="form-control"  [(ngModel)]="password" placeholder="Password" required/>
+            </div>
+            <div>
+                <p class="account-line">Already have an account? <a routerLink="../login">Log In</a></p>
+            </div>
+            <!-- Submit button -->
+            <button type="submit" (click)="signup()" class="btn btn-primary btn-submit btn-block mb-4" >Sign Up</button>
+          </form>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="outer-box">
+    <div class="container-fluid without-border">
+            <div class="heading-login">
+                <h2 class="fw-bold mb-2 my-5">Account Login</h2>
+            </div>
+            <form class="width">
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" id="form2Example1" class="form-control"  [(ngModel)]="email" placeholder="Login ID"  required/>
+                  <!-- <label class="form-label" for="form2Example1">Email address</label> -->
+                </div>
+    
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" id="form2Example2" class="form-control" [(ngModel)]="password" placeholder="Password" required/>
+                  <!-- <label class="form-label" for="form2Example2">Password</label> -->
+                </div>
+    
+                <!-- 2 column grid layout for inline styling -->
+                <div class="row mb-4">
+                  <div class="col d-flex mx-1">
+                  
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                      <label class="form-check-label" for="form2Example31"> Remember me </label>
+                    </div>
+                  </div>
+    
+                  <!-- <div class="col">
+                    <a href="#!">Forgot password?</a>
+                  </div> -->
+                </div>
+                <div>
+                    <p class="account-line">Don't have an account? <a routerLink="../signup">Sign Up</a>
+                    </p>
+                  </div>
+                <!-- Submit button -->
+                <button (click)="login()" type="submit" class="btn btn-primary btn-block mb-4"><a routerLink="../home">Login</a></button>
+                <!-- <button (click)="login()" type="submit" class="btn btn-primary btn-block mb-4">Login</button> -->
+              </form>
+    </div>
+</div>
