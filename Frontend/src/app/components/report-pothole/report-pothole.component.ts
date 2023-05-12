@@ -92,6 +92,7 @@ submitForm() {
  let Data = {
     "image": this.imgBase64,
     "name" : this.file.name,
+    "id": localStorage.getItem('user'),
     "location":
     {
       crossRoad1: this.crossRoad1,
@@ -100,6 +101,9 @@ submitForm() {
       atlocation: this.atlocation,
     }
   }
+
+  console.log("Data : ", Data);
+  
   console.log('Image ',this.imgBase64);
   this.apiService.reportPothole(Data).subscribe(
     response =>{
