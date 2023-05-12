@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
     this.apiService.createUser(user).subscribe(
       response =>{
          console.log('SIGN UP RESPONSE : ',response);
-         if (response.status === 200) {
+         if (response.status === "OK") {
           this.router.navigate(['/home']);
         }
         else{
