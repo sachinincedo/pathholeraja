@@ -90,7 +90,7 @@ _handleReaderLoaded(e: any) {
 
 submitForm() {
  let Data = {
-    "photoData": this.imgBase64,
+    // "photoData": this.imgBase64,
     "photoName" : this.file.name,
     "id": localStorage.getItem('user'),
     "location":
