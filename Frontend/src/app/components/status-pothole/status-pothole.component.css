@@ -78,6 +78,11 @@
 .status-items li{
     text-decoration: none;
 }
+.no-items{
+    text-align: center;
+    font-weight: 400;
+    font-size: medium;
+}
 @media screen and (max-width: 320px) {
     .heading-topic .row{
         font-size: 10px;

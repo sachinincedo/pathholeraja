@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.homeData().subscribe(
       data => {
+        console.log('HOME', data);
         this.TotalPotHoleReported = data.totalPotholeReported;
         this.PotholeIReported = data.potholeIreport;
       },

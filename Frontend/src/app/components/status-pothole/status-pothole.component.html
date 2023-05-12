@@ -15,7 +15,7 @@
                     <div class="col-3 sp"> PinCode</div>
                     <div class="col-3 sp-last"> Reported On</div>
                   </div>
-                  <div *ngIf="items.length < 1">
+                  <div class="no-items" *ngIf="items.length < 1">
                     <p>No items to display</p>
                   </div>
                   <div class="row" *ngFor="let item of items| slice:0:showCountOfPost; let i=index" >
