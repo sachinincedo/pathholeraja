@@ -18,17 +18,18 @@ export class LoginComponent implements OnInit {
   }
  
   login(){
-      const user = {
+      let user = {
         email: this.email,
         password: this.password
       };
-      console.log('User',user);
+      console.log('User',user.email);
       this.apiService.loginUser(user).subscribe(
         response =>{
            console.log('LOGIN Response',response.status);
            
             if (response.status === "OK") {
               this.router.navigate(['/home']);
+              localStorage.setItem('user', response.userId);
             }
             else{
               this.text=response.message;
