@@ -13,6 +13,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   loginUser(user: any): Observable<any> {
+    console.log(user);
     return this.http.post(this.loginurl, user);
   }
   homeData(): Observable<any>{

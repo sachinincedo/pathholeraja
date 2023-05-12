@@ -25,9 +25,9 @@ export class LoginComponent implements OnInit {
       console.log('User',user);
       this.apiService.loginUser(user).subscribe(
         response =>{
-           console.log('LOGIN Response',response);
+           console.log('LOGIN Response',response.status);
            
-            if (response.status === 200) {
+            if (response.status === "OK") {
               this.router.navigate(['/home']);
             }
             else{
