@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
         response =>{
            console.log('LOGIN Response',response);
            
-            if (response.status === 200) {
+            if (response.status === "OK") {
               this.router.navigate(['/home']);
               localStorage.setItem('user', response.userId);
             }
