@@ -90,20 +90,20 @@ _handleReaderLoaded(e: any) {
 
 submitForm() {
  let Data = {
-    "image": this.imgBase64,
-    "name" : this.file.name,
+    "photoData": this.imgBase64,
+    "photoName" : this.file.name,
     "id": localStorage.getItem('user'),
     "location":
     {
       crossRoad1: this.crossRoad1,
       crossRoad2: this.crossRoad2,
-      additionalDesc: this.additionalDesc,
-      atlocation: this.atlocation,
+      additionalDescription: this.additionalDesc,
+      // atlocation: this.atlocation,
     }
   }
 
   console.log("Data : ", Data);
-  
+
   console.log('Image ',this.imgBase64);
   this.apiService.reportPothole(Data).subscribe(
     response =>{
