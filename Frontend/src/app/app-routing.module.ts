@@ -5,15 +5,13 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ReportPotholeComponent } from './components/report-pothole/report-pothole.component';
 import { StatusPotholeComponent } from './components/status-pothole/status-pothole.component';
+import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
+import { SplashScreenTwoComponent } from './components/splash-screen-two/splash-screen-two.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule)
-  // },
   {
     path:'',
-    redirectTo:'/login',
+    redirectTo:'/splashscreen',
     pathMatch:'full'
   },
   {
@@ -35,6 +33,14 @@ const routes: Routes = [
   {
     path:'status-pothole',
     component: StatusPotholeComponent
+  },
+  {
+    path:'splashscreen',
+    component: SplashScreenComponent
+  },
+  {
+    path:'splashscreen2',
+    component:SplashScreenTwoComponent
   }
 
 ];

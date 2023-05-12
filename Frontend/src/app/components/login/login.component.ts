@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,8 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent implements OnInit {
   email: string='';
   password: string='';
-  constructor(private apiService: LoginService) { }
+  text : string='error message';
+  constructor(private apiService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +26,14 @@ export class LoginComponent implements OnInit {
       this.apiService.loginUser(user).subscribe(
         response =>{
            console.log('LOGIN Response',response);
+           
+            if (response.status === 200) {
+              this.router.navigate(['/home']);
+            }
+            else{
+              this.text=response.message;
+              // this.router.navigate(['/login']);
+            }
         },
         error => console.log(error)
       );

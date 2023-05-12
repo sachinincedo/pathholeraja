@@ -6,14 +6,12 @@
             <form class="width">
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" id="form2Example1" class="form-control"  [(ngModel)]="email" placeholder="Login ID"  required/>
-                  <!-- <label class="form-label" for="form2Example1">Email address</label> -->
+                  <input type="email" id="email" name="email" class="form-control"  [(ngModel)]="email" placeholder="Login ID"  required/>
                 </div>
     
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                  <input type="password" id="form2Example2" class="form-control" [(ngModel)]="password" placeholder="Password" required/>
-                  <!-- <label class="form-label" for="form2Example2">Password</label> -->
+                  <input type="password" id="password" name="password" class="form-control" [(ngModel)]="password" placeholder="Password" required/>
                 </div>
     
                 <!-- 2 column grid layout for inline styling -->
@@ -35,8 +33,11 @@
                     </p>
                   </div>
                 <!-- Submit button -->
-                <button (click)="login()" type="submit" class="btn btn-primary btn-block mb-4"><a routerLink="../home">Login</a></button>
-                <!-- <button (click)="login()" type="submit" class="btn btn-primary btn-block mb-4">Login</button> -->
+                <!-- <button (click)="login()" type="submit" class="btn btn-primary btn-block mb-4"><a routerLink="../home">Login</a></button> -->
+                <div class="error-txt">
+                  {{text}}
+                </div>
+                <button (click)="login()" type="submit" class="btn btn-primary btn-block mb-4">Login</button>
               </form>
     </div>
 </div>

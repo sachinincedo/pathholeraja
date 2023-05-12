@@ -12,8 +12,9 @@
             <div class="uplaod-box">
                   <div class="image-upload">
                     <!-- <label for="fileUpload">Select file: </label> -->
-                    <input class="box-feild" type="file" id="fileUpload" (change)="onFileSelected($event)" required>
-                    <input class="result-feild" type="text" id="fileName" [value]="fileName" readonly>
+                    <input (change)="onSelectFile($event)"  class="box-feild" name="file" type="file" required />
+                    <!-- <input class="box-feild" type="file" id="fileUpload" (change)="onFileSelected($event)" required>
+                    <input class="result-feild" type="text" id="fileName" [value]="fileName" readonly> -->
                     <!-- <button type="button" id="clearFile" (click)="onClearFile()">Clear</button> -->
                   </div>
             </div>
@@ -60,7 +61,7 @@
                           </div>
                 </div>
                  <div class="submit-class">
-                    <button (click)="reportPothole()" type="submit" class="btn-submit" >Submit</button>
+                    <button (click)="submitForm()" type="submit" class="btn-submit" >Submit</button>
                  </div>
             </div>
         </div>

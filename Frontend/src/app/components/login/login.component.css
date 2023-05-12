@@ -16,7 +16,12 @@
 .width{
     padding: 20px;
 }
+.error-txt{
+    font-weight: 500;
+    padding: 10px;
+    border: 1px solid black;
 
+}
 .btn-block a{
     color: white !important;
     font-weight: 500;
