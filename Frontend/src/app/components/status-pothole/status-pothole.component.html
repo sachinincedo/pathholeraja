@@ -23,9 +23,9 @@
                         <p>{{item.ticketId}}</p>
                         <span class="status-outer">
                             <div [ngClass]="{
-                                'status-box-fixed': item.status==='Fixed',
-                                'status-box-progress': item.status==='WIP',
-                                'status-box-not-started': item.status==='Not Started'}">   
+                                'status-box-fixed': item.status==='FIXED',
+                                'status-box-progress': item.status==='UNDERPROGRESS',
+                                'status-box-not-started': item.status==='NOTSTARTED'}">   
                             </div>
                         </span>
                       </div>
