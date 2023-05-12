@@ -34,8 +34,9 @@
                   </div>
                 <!-- Submit button -->
                 <!-- <button (click)="login()" type="submit" class="btn btn-primary btn-block mb-4"><a routerLink="../home">Login</a></button> -->
-                <div class="error-txt">
-                  {{text}}
+                <div [ngClass]="{
+                  'alert-red': text ==='error message'}">
+                  <p> {{text}}</p>
                 </div>
                 <button (click)="login()" type="submit" class="btn btn-primary btn-block mb-4">Login</button>
               </form>

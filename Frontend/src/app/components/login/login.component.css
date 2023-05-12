@@ -16,10 +16,16 @@
 .width{
     padding: 20px;
 }
-.error-txt{
+.alert-red{
+    padding: 10px 0px;
+}
+.alert-red p{
     font-weight: 500;
     padding: 10px;
     border: 1px solid black;
+    border-radius: 5px;
+    background-color: red;
+    text-align: center;
 
 }
 .btn-block a{
