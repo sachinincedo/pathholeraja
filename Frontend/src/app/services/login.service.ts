@@ -10,6 +10,7 @@ export class LoginService {
   private loginurl = 'http://localhost:8080/api/v1/login';
   private homeurl = 'http://localhost:8080/api/v1/home';
   private reportpothole = 'http://localhost:8080/api/v1/potholes/report';
+  private statusurl = 'http://localhost:8080/api/v1/home/status';
   constructor(private http: HttpClient) { }
 
   loginUser(user:any): Observable<any> {
@@ -20,5 +21,9 @@ export class LoginService {
   }
   reportPothole(data:any): Observable<any>{
     return this.http.post(this.reportpothole,data);
+  }
+
+  statuspothole(): Observable<any>{
+    return this.http.get(this.statusurl);
   }
 }
