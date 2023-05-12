@@ -24,6 +24,9 @@ export class LoginService {
   }
 
   statuspothole(): Observable<any>{
-    return this.http.get(this.statusurl);
+    // return this.http.get(this.statusurl);
+    let userId=localStorage.getItem('user')
+    const url = `${this.statusurl}?userId=${userId}`;
+  return this.http.get(url);
   }
 }
