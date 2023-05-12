@@ -16,7 +16,7 @@
                     <div class="col-3 sp-last"> Reported On</div>
                   </div>
                   <div class="no-items" *ngIf="items.length < 1">
-                    <p>No items to display</p>
+                    <p>No Potholes to display</p>
                   </div>
                   <div class="row" *ngFor="let item of items| slice:0:showCountOfPost; let i=index" >
                       <div *ngIf="items.length > 1" class="col-3 dis">
