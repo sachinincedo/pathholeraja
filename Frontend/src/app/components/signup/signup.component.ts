@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
           this.router.navigate(['/home']);
         }
         else{
-          this.router.navigate(['/signup']);
+          this.router.navigate(['/login']);
         }
       },
       error => console.log(error)

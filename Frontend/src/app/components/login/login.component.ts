@@ -11,7 +11,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent implements OnInit {
   email: string='';
   password: string='';
-  text : string='error message';
+  text : string='Inavlid email or password';
   constructor(private apiService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
