@@ -21,7 +21,7 @@ export class LoginService {
   }
   reportPothole(data:any): Observable<any>{
     return this.http.post(this.reportpothole,data);
-  }
+  } 
 
   statuspothole(): Observable<any>{
     // return this.http.get(this.statusurl);
