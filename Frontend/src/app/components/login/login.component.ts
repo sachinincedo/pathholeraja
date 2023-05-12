@@ -25,9 +25,9 @@ export class LoginComponent implements OnInit {
       console.log('User',user.email);
       this.apiService.loginUser(user).subscribe(
         response =>{
-           console.log('LOGIN Response',response.status);
+           console.log('LOGIN Response',response);
            
-            if (response.status === "OK") {
+            if (response.status === 200) {
               this.router.navigate(['/home']);
               localStorage.setItem('user', response.userId);
             }
