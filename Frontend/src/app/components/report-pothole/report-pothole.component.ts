@@ -13,35 +13,9 @@ export class ReportPotholeComponent implements OnInit {
   crossRoad2: string='';
   additionalDesc: string='';
   atlocation: boolean=false;
-
   constructor(private apiService : LoginService,private sanitizer: DomSanitizer) { }
-  // @ViewChild('fileUpload') fileUpload: any;
-  // fileName = 'No file chosen';
-  // onFileSelected(event: any) {
-  //   const file: File = event.target.files[0];
-  //   this.fileName = file.name;
-  // }
   ngOnInit(): void {    
   }
-  reportPothole(){
-    // const data = {
-    //    location:
-    //       {
-    //         crossRoad1: this.crossRoad1,
-    //         crossRoad2: this.crossRoad2,
-    //         additionalDesc: this.additionalDesc,
-    //         atlocation: this.atlocation,
-    //       }
-    // };
-    // console.log('Data Report',data);
-    // this.apiService.reportPothole(data).subscribe(
-    //   response =>{
-    //      console.log('Report Response',response);
-    //   },
-    //   error => console.log(error)
-    // );
-  }
-
   file!: File;
   
 //base64
@@ -52,7 +26,6 @@ postData = {};
 
 // used to show image in html
 imagePath: any;
-
 
 public onSelectFile(event: any) {
   let fileList: FileList = event.target.files;
@@ -89,18 +62,18 @@ _handleReaderLoaded(e: any) {
 }
 
 submitForm() {
- let Data = {
-    // "photoData": this.imgBase64,
-    "photoName" : this.file.name,
-    "id": localStorage.getItem('user'),
-    "location":
-    {
-      crossRoad1: this.crossRoad1,
-      crossRoad2: this.crossRoad2,
-      additionalDescription: this.additionalDesc,
-      // atlocation: this.atlocation,
-    }
-  }
+    let Data = {
+        // "photoData": this.imgBase64,
+        "photoName" : this.file.name,
+        "id": localStorage.getItem('user'),
+        "location":
+        {
+          crossRoad1: this.crossRoad1,
+          crossRoad2: this.crossRoad2,
+          additionalDescription: this.additionalDesc,
+          // atlocation: this.atlocation,
+        }
+      }
 
   console.log("Data : ", Data);
 
