@@ -9,7 +9,7 @@ export class LoginService {
 
   private loginurl = 'http://localhost:8080/api/v1/login';
   private homeurl = 'http://localhost:8080/api/v1/home';
-  private reportpothole = 'http://localhost:8080/api/v1/';
+  private reportpothole = 'http://localhost:8080/api/v1/potholes/report';
   constructor(private http: HttpClient) { }
 
   loginUser(user:any): Observable<any> {
