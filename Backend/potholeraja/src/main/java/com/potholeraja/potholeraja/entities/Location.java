@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
 @Entity
@@ -48,10 +50,10 @@ public class Location {
 	private String state;
 	
 	
-	@Column(name = "zipcode")
-	private String zipcode;
+	@Column(name = "pincode")
+	private String pincode;
 	
-	@OneToMany(mappedBy = "location")
-	private Set<TicketEntity> tickets = new HashSet<>();
-
+//	@OneToMany(mappedBy = "location")
+//	@JsonManagedReference
+//	private Set<TicketEntity> tickets = new HashSet<>();
 }

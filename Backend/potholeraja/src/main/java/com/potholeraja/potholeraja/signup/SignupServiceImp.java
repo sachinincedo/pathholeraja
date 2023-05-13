@@ -4,6 +4,7 @@ import java.time.ZonedDateTime;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.potholeraja.potholeraja.entities.UserEntity;
@@ -18,16 +19,19 @@ public class SignupServiceImp implements SignupService {
 	@Override
 	public SignupPushAndResponce registerUser(SignupRequest signupRequest) {
 		// TODO Auto-generated method stub
+		SignupPushAndResponce signupPushAndResponce = new SignupPushAndResponce();
 		Optional<UserEntity> foundUser = userRepository.findByEmail(signupRequest.getEmail());
 		if (foundUser.isPresent()) {
-			throw new RequestException("User already exists");
+			
+			 signupPushAndResponce.setStatus(HttpStatus.BAD_REQUEST);
+			 return signupPushAndResponce;
 		}
 		UserEntity newUser = createUser(signupRequest);
 		userRepository.saveAndFlush(newUser);
-		SignupPushAndResponce signupPushAndResponce = new SignupPushAndResponce();
 		signupPushAndResponce.setFirstName(signupRequest.getFirstName());
 		signupPushAndResponce.setLastName(signupRequest.getLastName());
 		signupPushAndResponce.setEmail(signupRequest.getEmail());
+		signupPushAndResponce.setStatus(HttpStatus.OK);
 		return signupPushAndResponce;
 	}
 
