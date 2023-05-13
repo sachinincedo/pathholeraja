@@ -83,11 +83,11 @@ submitForm() {
       }
 
   console.log("Report  ( FRONT END  ) : ", Data);
- // console.log('Image ',this.imgBase64);
+  console.log('Image ',this.imgBase64);
   this.apiService.reportPothole(Data).subscribe(
     response =>{
        console.log('Report Response ( SErver )',response);
-       if(response.httpStatus === "OK")
+       if(response.status === "OK")
           this.router.navigate(['/home'])
     },
     error => console.log(error)
