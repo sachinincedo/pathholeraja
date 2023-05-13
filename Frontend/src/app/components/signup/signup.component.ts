@@ -17,6 +17,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
   signup() {
+    //SENDING USER OBJECT TO SERVER FOR CREATING THIS USER LOGIN 
     const user = {
       firstName: this.firstName,
       lastName: this.lastName,

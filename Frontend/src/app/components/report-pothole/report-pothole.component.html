@@ -1,78 +1,81 @@
 <div class="outer-box">
-    <div class="container-fluid without-border">
-        <div>
-            <app-header></app-header>
-        </div>
-        <form class="space-header-below" #myForm="ngForm" >
+  <div class="container-fluid without-border">
+    <!-- Calling Header Component  -->
+      <app-header></app-header> 
+      <form class="space-header-below" #myForm="ngForm" >
         <div class="card">
             <div class="step1">
                 <p>Step 1 - Take a picture ( Not Mandatory) </p>
                 <span>Please upload an image for the pothole</span>
             </div>
+            <!-- Upload The Image  -->
             <div class="uplaod-box">
                   <div class="image-upload">
-                 
-                    <input (change)="onSelectFile($event)"  class="box-feild" name="file" accept="image/png, image/jpeg, image/jpg" type="file" required />
-                  
+                    <input #fileInput (change)="onSelectFile($event)"  
+                        class="box-feild" name="file" accept="image/png, image/jpeg, image/jpg"
+                        type="file" required />
                   </div>
             </div>
         </div>
         <div class="card">
             <div class="step2">
-                <p>Step 2 - Location* (  Mandatory) </p>
-                <span>Are you in location where the pothole is ?</span>
+              <p>Step 2 - Location* (  Mandatory) </p>
+              <span>Are you in location where the pothole is ?</span>
             </div>
+            <!-- Location Check Box  -->
             <div class="radio-btn">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input"  [(ngModel)]="atlocation" type="radio" name="inlineRadioOptions" id="inlineRadio1" value={{true}} required />
-                    <label class="form-check-label step1" for="inlineRadio1">Yes</label>
-                  </div>
-                  
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input"  [(ngModel)]="atlocation" type="radio" name="inlineRadioOptions" id="inlineRadio2" value={{false}} required/>
-                    <label class="form-check-label step1" for="inlineRadio2">No</label>
-                  </div>
-                  
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input"  [(ngModel)]="atlocation" type="radio" name="inlineRadioOptions" id="inlineRadio1" value={{true}} required />
+                  <label class="form-check-label step1" for="inlineRadio1">Yes</label>
+              </div> 
+              <div class="form-check form-check-inline">
+                <input class="form-check-input"  [(ngModel)]="atlocation" type="radio" name="inlineRadioOptions" id="inlineRadio2" value={{false}} required/>
+                <label class="form-check-label step1" for="inlineRadio2">No</label>
+              </div>                 
             </div>
             <div class="step3">
-                <div class="step3">
-                    <span> Addition Information</span>
+              <div class="step3">
+                <span> Addition Information</span>
+              </div>
+              <div class="more-info">
+                <p> Please Give us the crossroads of this pothole</p>
+              </div>
+              <div>
+                <!-- Cross road 1 Box  -->
+                <div class="form-outline mb-4">
+                  <input type="text" id="form7Example4" name="crossRoad1" class="form-control" [(ngModel)]="crossRoad1" placeholder="Cross Road 1" required />
+                  <div *ngIf="myForm.submitted && myForm.controls.crossRoad1.errors?.required" class="text-danger">
+                    Cross Road 1 is required.
+                  </div>
                 </div>
-                <div class="more-info">
-                    <p> Please Give us the crossroads of this pothole</p>
+                <!-- Cross Road 2 Box  -->
+                <div class="form-outline mb-4">
+                  <input type="text" id="form7Example4" name="crossRoad2" class="form-control" [(ngModel)]="crossRoad2" placeholder="Cross Road 2" required />
+                  <div *ngIf="myForm.submitted && myForm.controls.crossRoad2.errors?.required" class="text-danger">
+                    Cross Road 2 is required.
+                  </div>
                 </div>
-                <div>
-                    
-                    <div class="form-outline mb-4">
-                        <input type="text" id="form7Example4" name="crossRoad1" class="form-control" [(ngModel)]="crossRoad1" placeholder="Cross Road 1" required />
-                        <div *ngIf="myForm.submitted && myForm.controls.crossRoad1.errors?.required" class="text-danger">
-                          Cross Road 1 is required.
-                        </div>
-                      </div>
-                      <div class="form-outline mb-4">
-                        <input type="text" id="form7Example4" name="crossRoad2" class="form-control" [(ngModel)]="crossRoad2" placeholder="Cross Road 2" required />
-                        <div *ngIf="myForm.submitted && myForm.controls.crossRoad2.errors?.required" class="text-danger">
-                          Cross Road 2 is required.
-                        </div>
-                      </div>
-                      <div class="form-outline mb-4">
-                        <input type="number" id="form7Example4" name="PinCode" class="form-control" [(ngModel)]="pinCode" placeholder="PinCode" required />
-                        <div *ngIf="myForm.submitted && myForm.controls.PinCode.errors?.required" class="text-danger">
-                              Pincode is required.
-                        </div>
-                      </div>
+                <!-- Pincode Box  -->
+                <div class="form-outline mb-4">
+                  <input type="number" id="form7Example4" name="PinCode" class="form-control" [(ngModel)]="pinCode" placeholder="PinCode" required />
+                  <div *ngIf="myForm.submitted && myForm.controls.PinCode.errors?.required" class="text-danger">
+                        Pincode is required.
+                  </div>
                 </div>
-                <div class="additional-desc">
-                    <p> Addition Description</p> 
-                        <div class="form-outline mb-4">
-                            <textarea class="form-control" id="form7Example7" name=
-                            "form7Example7" rows="3"  [(ngModel)]="additionalDesc" placeholder="Example: Opposite to Canara Bank at the dge of road"></textarea>
-                           
-                          </div>
-                </div>
-                 <div class="submit-class">
-                    <button (click)="submitForm()" type="submit" class="btn-submit" [disabled]="!myForm.valid" [ngClass]="{'disabled': !myForm.valid}">Submit</button>
-                 </div>
+              </div>
+              <!-- Additional Description  -->
+              <div class="additional-desc">
+                <p> Addition Description</p> 
+                  <div class="form-outline mb-4">
+                    <textarea class="form-control" id="form7Example7" name=
+                     "form7Example7" rows="3"  [(ngModel)]="additionalDesc"
+                      placeholder="Example: Opposite to Canara Bank at the dge of road"></textarea> 
+                  </div>
+              </div>
+              <!-- Submit Button  -->
+              <div class="submit-class">
+                <button (click)="submitForm()" type="submit" class="btn-submit" [disabled]="!myForm.valid" [ngClass]="{'disabled': !myForm.valid}">Submit</button>
+              </div>
             </div>
         </div>
     </form>

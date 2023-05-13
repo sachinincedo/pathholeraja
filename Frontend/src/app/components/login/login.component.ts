@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/services/login.service';
 
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -9,31 +9,31 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email: string='';
-  password: string='';
-  text : string='';
-  constructor(private apiService: LoginService, private router: Router) { }
+  // Variables Declared 
+    email: string='';
+    password: string='';
+    text : string='';
+
+    constructor(private apiService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
- 
+ // Login Button Function 
   login(){
-      let user = {
+      let loginDetails = {
         email: this.email,
         password: this.password
       };
-      // console.log('User',user.email);
-      this.apiService.loginUser(user).subscribe(
-        response =>{
-           console.log('LOGIN API Response',response);
-           
+      this.apiService.loginUser(loginDetails).subscribe(
+        (response) =>{
+           console.log('LOGIN API Response (SERVER)',response);
             if (response.status === "OK") {
-              this.router.navigate(['/home']);
-              localStorage.setItem('user', response.userId);
+                this.router.navigate(['/home']);
+                // Getting USER ID of User stored in Local
+                localStorage.setItem('user', response.userId);
             }
             else{
-              this.text=response.message;
-              // this.router.navigate(['/login']);
+                 this.text = response.message;
             }
         },
         error => console.log(error)

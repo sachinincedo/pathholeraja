@@ -7,15 +7,17 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  // Variables Declaration 
   TotalPotHoleReported:any = 0;
   PotholeIReported: any= 0 ;
 
   constructor(private apiService: LoginService) { }
 
   ngOnInit(): void {
+    // HOME API CALLED ON EACH REFRESH OF PAGE 
     this.apiService.homeData().subscribe(
       data => {
-        console.log('HOME', data);
+        console.log('HOME API ( SERVER RESPONSE )', data);
         this.TotalPotHoleReported = data.totalPotholeReported;
         this.PotholeIReported = data.potholeIreport;
       },
