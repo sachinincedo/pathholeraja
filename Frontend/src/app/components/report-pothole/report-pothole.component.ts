@@ -87,7 +87,7 @@ submitForm() {
   this.apiService.reportPothole(Data).subscribe(
     response =>{
        console.log('Report Response ( SErver )',response);
-       if(response.status === "OK")
+       if(response.httpStatus === "OK")
           this.router.navigate(['/home'])
     },
     error => console.log(error)

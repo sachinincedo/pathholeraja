@@ -28,6 +28,7 @@ export class StatusPotholeComponent implements OnInit {
    (response: ApiResponse[]) =>{
          console.log('STATUS API RESPONSE :( SERVER) ',response);
          this.items=response;
+        
          
       },
       error => console.log(error)
