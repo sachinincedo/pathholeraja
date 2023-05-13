@@ -22,10 +22,10 @@ export class LoginComponent implements OnInit {
         email: this.email,
         password: this.password
       };
-      console.log('User',user.email);
+      // console.log('User',user.email);
       this.apiService.loginUser(user).subscribe(
         response =>{
-           console.log('LOGIN Response',response);
+           console.log('LOGIN API Response',response);
            
             if (response.status === "OK") {
               this.router.navigate(['/home']);

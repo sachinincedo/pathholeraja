@@ -82,7 +82,7 @@ submitForm() {
         }
       }
 
-  console.log("Report API CALL ( FRONT END  ) : ", Data);
+  console.log("Report  ( FRONT END  ) : ", Data);
  // console.log('Image ',this.imgBase64);
   this.apiService.reportPothole(Data).subscribe(
     response =>{

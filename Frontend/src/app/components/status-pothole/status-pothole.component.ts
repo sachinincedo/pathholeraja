@@ -26,7 +26,7 @@ export class StatusPotholeComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.statuspothole().subscribe(
    (response: ApiResponse[]) =>{
-         console.log('SIGN UP RESPONSE : ',response);
+         console.log('STATUS API RESPONSE :( SERVER) ',response);
          this.items=response;
          
       },
