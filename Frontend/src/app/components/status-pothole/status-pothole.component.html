@@ -24,7 +24,7 @@
                         <span class="status-outer">
                             <div [ngClass]="{
                                 'status-box-fixed': item.status==='FIXED',
-                                'status-box-progress': item.status==='UNDERPROGRESS',
+                                'status-box-progress': item.status==='WIP',
                                 'status-box-not-started': item.status==='NOTSTARTED'}">   
                             </div>
                         </span>
@@ -33,7 +33,7 @@
                         <p>{{ item.status }}</p>
                       </div>
                       <div class="col-3">
-                        <p>{{ item.pincode }}</p>
+                        <p>{{ item.location.pincode }}</p>
                       </div>
                       <div  class="col-3 sp-last">
                         <p>{{item.creationDateTime}}</p>

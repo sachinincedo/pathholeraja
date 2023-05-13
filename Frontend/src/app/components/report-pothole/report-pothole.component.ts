@@ -72,10 +72,10 @@ submitForm() {
         "photoData": this.imgBase64,
         "photoName" : this.file.name,
         "id": localStorage.getItem('user'),
-        "pinCode": this.pinCode,
-        "onPremise": this.atlocation,
+        "premise": this.atlocation,
         "location":
         {
+          pincode: this.pinCode,
           crossRoad1: this.crossRoad1,
           crossRoad2: this.crossRoad2,
           additionalDescription: this.additionalDesc
