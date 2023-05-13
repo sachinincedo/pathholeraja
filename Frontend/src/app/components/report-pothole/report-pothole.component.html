@@ -3,7 +3,7 @@
         <div>
             <app-header></app-header>
         </div>
-        <form class="space-header-below">
+        <form class="space-header-below" #myForm="ngForm" >
         <div class="card">
             <div class="step1">
                 <p>Step 1 - Take a picture ( Not Mandatory) </p>
@@ -11,11 +11,9 @@
             </div>
             <div class="uplaod-box">
                   <div class="image-upload">
-                    <!-- <label for="fileUpload">Select file: </label> -->
-                    <input (change)="onSelectFile($event)"  class="box-feild" name="file" type="file" required />
-                    <!-- <input class="box-feild" type="file" id="fileUpload" (change)="onFileSelected($event)" required>
-                    <input class="result-feild" type="text" id="fileName" [value]="fileName" readonly> -->
-                    <!-- <button type="button" id="clearFile" (click)="onClearFile()">Clear</button> -->
+                 
+                    <input (change)="onSelectFile($event)"  class="box-feild" name="file" accept="image/png, image/jpeg, image/jpg" type="file" required />
+                  
                   </div>
             </div>
         </div>
@@ -26,12 +24,12 @@
             </div>
             <div class="radio-btn">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input"  [(ngModel)]="atlocation" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required />
+                    <input class="form-check-input"  [(ngModel)]="atlocation" type="radio" name="inlineRadioOptions" id="inlineRadio1" value={{true}} required />
                     <label class="form-check-label step1" for="inlineRadio1">Yes</label>
                   </div>
                   
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input"  [(ngModel)]="atlocation" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required/>
+                    <input class="form-check-input"  [(ngModel)]="atlocation" type="radio" name="inlineRadioOptions" id="inlineRadio2" value={{false}} required/>
                     <label class="form-check-label step1" for="inlineRadio2">No</label>
                   </div>
                   
@@ -45,27 +43,39 @@
                 </div>
                 <div>
                     
-                        <div class="form-outline mb-4">
-                            <input type="text" id="form7Example4" name="form7Example4" class="form-control"  [(ngModel)]="crossRoad1"  placeholder="Cross Road 1" required/>
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form7Example4" name="crossRoad1" class="form-control" [(ngModel)]="crossRoad1" placeholder="Cross Road 1" required />
+                        <div *ngIf="myForm.submitted && myForm.controls.crossRoad1.errors?.required" class="text-danger">
+                          Cross Road 1 is required.
                         </div>
-                        <div class="form-outline mb-4">
-                            <input type="text" id="form7Example4" name="form7Example4" class="form-control"  [(ngModel)]="crossRoad2" placeholder="Cross Road 2" required/>
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="text" id="form7Example4" name="crossRoad2" class="form-control" [(ngModel)]="crossRoad2" placeholder="Cross Road 2" required />
+                        <div *ngIf="myForm.submitted && myForm.controls.crossRoad2.errors?.required" class="text-danger">
+                          Cross Road 2 is required.
                         </div>
-               
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="number" id="form7Example4" name="PinCode" class="form-control" [(ngModel)]="pinCode" placeholder="PinCode" required />
+                        <div *ngIf="myForm.submitted && myForm.controls.PinCode.errors?.required" class="text-danger">
+                              Pincode is required.
+                        </div>
+                      </div>
                 </div>
                 <div class="additional-desc">
                     <p> Addition Description</p> 
                         <div class="form-outline mb-4">
                             <textarea class="form-control" id="form7Example7" name=
                             "form7Example7" rows="3"  [(ngModel)]="additionalDesc" placeholder="Example: Opposite to Canara Bank at the dge of road"></textarea>
-                            <!-- <label class="form-label" for="form7Example7">Additional information</label> -->
+                           
                           </div>
                 </div>
                  <div class="submit-class">
-                    <button (click)="submitForm()" type="submit" class="btn-submit" >Submit</button>
+                    <button (click)="submitForm()" type="submit" class="btn-submit" [disabled]="!myForm.valid" [ngClass]="{'disabled': !myForm.valid}">Submit</button>
                  </div>
             </div>
         </div>
     </form>
     </div>
 </div>
+

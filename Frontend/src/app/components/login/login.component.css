@@ -13,6 +13,9 @@
 .account-line a:hover{
     color: blue;
 }
+.Remember{
+    font-size: medium;
+}
 .width{
     padding: 20px;
 }

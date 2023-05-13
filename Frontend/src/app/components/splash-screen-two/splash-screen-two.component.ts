@@ -9,23 +9,23 @@ import { Router } from '@angular/router';
 export class SplashScreenTwoComponent implements OnInit {
   images = [
     '/assets/man.jpeg',
+    '/assets/person4.jpg',
+    '/assets/person4.jpg',
+    '/assets/man.jpeg',
+    '/assets/man.jpeg',
+    '/assets/person4.jpg',
     '/assets/man.jpeg',
     '/assets/man.jpeg',
     '/assets/man.jpeg',
     '/assets/man.jpeg',
-    '/assets/man.jpeg',
-    '/assets/man.jpeg',
-    '/assets/man.jpeg',
-    '/assets/man.jpeg',
-    '/assets/man.jpeg',
-    '/assets/man.jpeg',
-    '/assets/man.jpeg',
+    '/assets/person4.jpg',
+    '/assets/person4.jpg',
   ];
   constructor(private router : Router) { }
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.router.navigate(['login']);
+      this.router.navigate(['/login']);
     }, 3000);
   }
 

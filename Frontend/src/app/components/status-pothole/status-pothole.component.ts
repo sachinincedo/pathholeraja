@@ -17,7 +17,7 @@ export class StatusPotholeComponent implements OnInit {
   //   // { id: 6, status: 'Not Started', Pincode: '677337' , ReportedOn:'09/02/2023' },
   //   // { id: 7, status: 'WIP', Pincode: '107337' , ReportedOn:'08/02/2023' },
   //   // { id: 8, status: 'Fixed', Pincode: '507337' , ReportedOn:'07/02/2023' },
-  //   // { ticketId: 9, status: 'FIXED', volunteer: '507337' , creationDateTime:'07/02/2023' },
+  //   { ticketId: 9, status: 'FIXED', pincode: '507337' , creationDateTime:'07/02/2023' },
   // ];
 
   items: any[] = [];

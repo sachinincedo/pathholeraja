@@ -1,6 +1,7 @@
 .card{
     margin-top: 15px;
     color: black;
+    height: 80%;
 }
 .heading-status{
     font-weight: 500;
@@ -84,6 +85,12 @@
     font-size: medium;
 }
 @media screen and (max-width: 320px) {
+    .no-items{
+        text-align: center;
+        font-weight: 400;
+        padding: 10px;
+        font-size: small;
+    }
     .heading-topic .row{
         font-size: 10px;
         font-weight: 500;

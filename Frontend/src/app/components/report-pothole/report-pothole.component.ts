@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 
@@ -12,8 +13,9 @@ export class ReportPotholeComponent implements OnInit {
   crossRoad1: string='';
   crossRoad2: string='';
   additionalDesc: string='';
-  atlocation: boolean=false;
-  constructor(private apiService : LoginService,private sanitizer: DomSanitizer) { }
+  atlocation: string = '';
+  pinCode: string='';
+  constructor(private apiService : LoginService,private sanitizer: DomSanitizer, private router : Router) { }
   ngOnInit(): void {    
   }
   file!: File;
@@ -62,25 +64,31 @@ _handleReaderLoaded(e: any) {
 }
 
 submitForm() {
+  if (!this.file) {
+    alert("No file selected");
+    return;
+  }
     let Data = {
-        // "photoData": this.imgBase64,
+        "photoData": this.imgBase64,
         "photoName" : this.file.name,
         "id": localStorage.getItem('user'),
+        "pinCode": this.pinCode,
+        "onPremise": this.atlocation,
         "location":
         {
           crossRoad1: this.crossRoad1,
           crossRoad2: this.crossRoad2,
-          additionalDescription: this.additionalDesc,
-          // atlocation: this.atlocation,
+          additionalDescription: this.additionalDesc
         }
       }
 
-  console.log("Data : ", Data);
-
-  console.log('Image ',this.imgBase64);
+  console.log("Report API CALL ( FRONT END  ) : ", Data);
+ // console.log('Image ',this.imgBase64);
   this.apiService.reportPothole(Data).subscribe(
     response =>{
-       console.log('Report Response',response);
+       console.log('Report Response ( SErver )',response);
+       if(response.status === "OK")
+          this.router.navigate(['/home'])
     },
     error => console.log(error)
   );
