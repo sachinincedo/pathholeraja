@@ -56,12 +56,22 @@ handleFileInputChange(files: any) {
 }
 
 _handleReaderLoaded(e: any) {
-  let reader = e.target;
-  this.imgBase64 = reader.result;
 
-  // set and show image from base64
-  this.imagePath = this.sanitizer.bypassSecurityTrustResourceUrl(this.imgBase64);
-}
+   let reader = e.target;
+  
+   //this.imgBase64 = reader.result;
+  
+  let base64String = reader.result.split(',')[1]; // remove the "data:image/png;base64," prefix
+  
+   this.imgBase64 = base64String;
+  
+   // set and show image from base64
+  
+  //this.imagePath = this.sanitizer.bypassSecurityTrustResourceUrl(this.imgBase64);
+  
+   this.imagePath = this.sanitizer.bypassSecurityTrustResourceUrl(this.imgBase64);
+  
+  }
 
 submitForm() {
   if (!this.file) {
