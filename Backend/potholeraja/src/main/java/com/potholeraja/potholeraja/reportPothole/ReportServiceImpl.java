@@ -3,6 +3,7 @@ package com.potholeraja.potholeraja.reportPothole;
 import java.time.ZonedDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.potholeraja.potholeraja.entities.Location;
@@ -36,6 +37,7 @@ public class ReportServiceImpl implements ReportService {
 		ReportResponce reportResponce = new ReportResponce();
 		reportResponce.setStatus("in progress");
 		reportResponce.setTicketId(ticketEntity.getTicketId());
+		reportResponce.setHttpStatus(HttpStatus.OK);
 		return reportResponce;
 	}
 
@@ -50,7 +52,7 @@ public class ReportServiceImpl implements ReportService {
 		ticket.setBreadth(reportRequest.getBreadth());
 		ticket.setDepth(reportRequest.getDepth());
 		ticket.setSeverity(reportRequest.getSeverity());
-		ticket.setStatus(StatusEnum.NOTSTARTED);
+		ticket.setStatus(StatusEnum.UNDERPROGRESS);
 		ticket.setTicketDescription(reportRequest.getTicketDescription());
 		ticket.setPremise(reportRequest.getPremise());
 		ticket.setVolunteer(reportRequest.getVolunteer());
@@ -59,7 +61,7 @@ public class ReportServiceImpl implements ReportService {
 		ZonedDateTime now = ZonedDateTime.now();
 		ticket.setCreationDateTime(now);
 		ticket.setUpdationDateTime(now);
-		UserEntity user = userRepository.findById(Long.valueOf(2)).orElse(null);
+		UserEntity user = userRepository.findById(reportRequest.getId()).orElse(null);
 		ticket.setUser(user);
 		return ticket;
 	}
@@ -74,7 +76,7 @@ public class ReportServiceImpl implements ReportService {
 		location.setLatitude(reportRequest.getLocation().getLatitude());
 		location.setLongitude(reportRequest.getLocation().getLongitude());
 		location.setState(reportRequest.getLocation().getState());
-		location.setZipcode(reportRequest.getLocation().getZipcode());
+		location.setPincode(reportRequest.getLocation().getPincode());
 
 		return location;
 	}

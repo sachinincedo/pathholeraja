@@ -1,7 +1,7 @@
 package com.potholeraja.potholeraja.status;
 
 import java.util.List;
-import java.util.Optional;import java.util.stream.Collector;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +29,10 @@ public class StatusServiceImpl implements StatusService {
 		if (user.isEmpty()) {
 			throw new RequestException("User Not Found");
 		}
-
-		//List<TicketEntity> userTicketList = ticketRepository.findAllByUserId(userId);
-//		StatusResponce statusResponce = new StatusResponce();
-//		statusResponce.setTicket(userTicketList);
 		List<TicketEntity> ticket = ticketRepository.findAll();
-		List<TicketEntity> tk = ticket.stream().filter(user1 -> user1.getUser().getUserId()==userId).collect(Collectors.toList());
-		
+		List<TicketEntity> tk = ticket.stream()
+				.filter(user1 -> user1.getUser().getUserId()==userId)
+				.collect(Collectors.toList());
 		return tk;
 	}
 

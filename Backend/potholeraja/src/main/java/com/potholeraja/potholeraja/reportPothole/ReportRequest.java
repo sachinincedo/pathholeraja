@@ -18,4 +18,5 @@ public class ReportRequest {
 	private Boolean premise;
 	private Boolean volunteer;
 	private Location location;
+	private Long id;
 }

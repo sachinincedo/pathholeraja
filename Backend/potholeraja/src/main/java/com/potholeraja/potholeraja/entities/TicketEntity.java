@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.potholeraja.potholeraja.util.SeverityEnum;
 import com.potholeraja.potholeraja.util.StatusEnum;
@@ -73,13 +74,13 @@ public class TicketEntity {
 	@Column(name = "creation_date_time", columnDefinition = "TIMESTAMP", nullable = false)
 	@CreatedDate
 	private ZonedDateTime creationDateTime;
-
+     
 	@Column(name = "last_modified_date_time", columnDefinition = "TIMESTAMP", nullable = false)
 	@LastModifiedDate
 	private ZonedDateTime updationDateTime;
 
 	@ManyToOne
-	 @JsonIgnore 
+  //  @JsonBackReference
 	@JoinColumn(name = "location_id_fk")
 	private Location location;
 	
