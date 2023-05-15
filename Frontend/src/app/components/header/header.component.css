@@ -16,12 +16,12 @@
     padding: 10px;
 }
 .navbar-collapse{
-    padding: 10px 0px;;
+    padding: 10px 0px;
 }
 .fixing-header{
     z-index: 997;
     top: 0;
-    position: fixed;
+    position: absolute;
     width: 100%;
 }
 .mobile-nav-active {
@@ -89,5 +89,8 @@
         font-size: small;
     }
   }
+  
+
+  
 
   
