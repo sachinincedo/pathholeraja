@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
       response =>{
          console.log('SIGN UP API ( SERVER) : ',response);
          if (response.status === "OK") {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/login']);
         }
         else{
           this.router.navigate(['/login']);
