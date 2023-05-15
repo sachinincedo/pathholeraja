@@ -16,18 +16,18 @@ export class LoginService {
   loginUser(user:any): Observable<any> {
     return this.http.post(this.loginurl, user);
   }
+  
   homeData(): Observable<any>{
-    // return this.http.get(this.homeurl);
     let userId=localStorage.getItem('user')
     const url = `${this.homeurl}?userId=${userId}`;
     return this.http.get(url);
   }
+
   reportPothole(data:any): Observable<any>{
     return this.http.post(this.reportpothole,data);
   } 
 
   statuspothole(): Observable<any>{
-    // return this.http.get(this.statusurl);
     let userId=localStorage.getItem('user')
     const url = `${this.statusurl}?userId=${userId}`;
     return this.http.get(url);
