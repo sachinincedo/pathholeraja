@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.potholeraja.potholeraja.entities.UserEntity;
 import com.potholeraja.potholeraja.repositories.UserRepository;
-import com.potholeraja.potholeraja.util.RequestException;
 
 @Service
 public class SignupServiceImp implements SignupService {
@@ -24,6 +23,7 @@ public class SignupServiceImp implements SignupService {
 		if (foundUser.isPresent()) {
 			
 			 signupPushAndResponce.setStatus(HttpStatus.BAD_REQUEST);
+			 
 			 return signupPushAndResponce;
 		}
 		UserEntity newUser = createUser(signupRequest);

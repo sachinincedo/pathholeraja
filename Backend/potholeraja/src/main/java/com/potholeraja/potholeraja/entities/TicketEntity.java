@@ -16,8 +16,6 @@ import javax.persistence.Table;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.potholeraja.potholeraja.util.SeverityEnum;
 import com.potholeraja.potholeraja.util.StatusEnum;
 
@@ -43,8 +41,8 @@ public class TicketEntity {
 	@Column(name = "photo_name")
 	private String photo_name;
 
-	@Column(name = "photo_url")
-	private String photoData;
+	@Column(name = "photo_data", length = 2048576)
+	private byte[] photoData;
 
 	@Column(name = "length")
 	private String length;

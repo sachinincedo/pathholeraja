@@ -1,6 +1,7 @@
 package com.potholeraja.potholeraja.reportPothole;
 
 import java.time.ZonedDateTime;
+import java.util.Base64;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,25 +30,33 @@ public class ReportServiceImpl implements ReportService {
 	@Override
 	public ReportResponce createTicket(ReportRequest reportRequest) {
         
-		TicketEntity ticketEntity = setTicketDetails(reportRequest);
-		Location location = setLocationDetails(reportRequest);
-		locationRepository.saveAndFlush(location);
-		ticketEntity.setLocation(location);
-		ticketRepository.saveAndFlush(ticketEntity);
-		ReportResponce reportResponce = new ReportResponce();
-		reportResponce.setStatus("in progress");
-		reportResponce.setTicketId(ticketEntity.getTicketId());
-		reportResponce.setHttpStatus(HttpStatus.OK);
-		return reportResponce;
+		   ReportResponce reportResponce = new ReportResponce();
+		    try {
+		        TicketEntity ticketEntity = setTicketDetails(reportRequest);
+		        Location location = setLocationDetails(reportRequest);
+		        locationRepository.saveAndFlush(location);
+		        ticketEntity.setLocation(location);
+		        ticketRepository.saveAndFlush(ticketEntity);
+		        reportResponce.setStatus("WIP");
+		        reportResponce.setTicketId(ticketEntity.getTicketId());
+		        reportResponce.setHttpStatus(HttpStatus.OK);
+		    } catch (IllegalArgumentException ex) {
+		        reportResponce.setStatus("Error: Invalid image data");
+		        reportResponce.setHttpStatus(HttpStatus.BAD_REQUEST);
+		    }
+		    return reportResponce; 
 	}
 
 	private TicketEntity setTicketDetails(ReportRequest reportRequest) {
 		// TODO Auto-generated method stub
 		TicketEntity ticket = new TicketEntity();
 		ticket.setPhoto_name(reportRequest.getPhotoName());
-		String base64ImageData = reportRequest.getPhotoData();
+		//String base64ImageData = reportRequest.getPhotoData();
 		//byte[] imageData = Base64.getDecoder().decode(base64ImageData);
-		ticket.setPhotoData(base64ImageData);
+		//ticket.setPhotoData(base64ImageData);
+		byte[] imageData = Base64.getDecoder().decode(reportRequest.getPhotoData());
+	    ticket.setPhotoData(imageData);
+	    System.out.println("this is  image data " + imageData);
 		ticket.setLength(reportRequest.getLength());
 		ticket.setBreadth(reportRequest.getBreadth());
 		ticket.setDepth(reportRequest.getDepth());

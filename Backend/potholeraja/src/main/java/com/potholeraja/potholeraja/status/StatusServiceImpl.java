@@ -5,13 +5,14 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.potholeraja.potholeraja.entities.TicketEntity;
 import com.potholeraja.potholeraja.entities.UserEntity;
 import com.potholeraja.potholeraja.repositories.TicketRepository;
 import com.potholeraja.potholeraja.repositories.UserRepository;
-import com.potholeraja.potholeraja.util.RequestException;
 
 @Service
 public class StatusServiceImpl implements StatusService {
@@ -27,7 +28,7 @@ public class StatusServiceImpl implements StatusService {
 
 		Optional<UserEntity> user = userRepository.findById(userId);
 		if (user.isEmpty()) {
-			throw new RequestException("User Not Found");
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User Not Found");
 		}
 		List<TicketEntity> ticket = ticketRepository.findAll();
 		List<TicketEntity> tk = ticket.stream()
