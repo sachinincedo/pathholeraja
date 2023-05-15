@@ -20,9 +20,17 @@ public class HomePageServiceImpl implements HomePageService {
 	public ResponseEntity<HomeResponce> getHomePageDetails(Long userId) {
 		List<TicketEntity> ticket = ticketRepository.findAll();
 		Long totalPothole = (long) ticket.size();
-		Long potholeIreported = ticket.stream()
-				.filter(user -> user.getUser().getUserId().equals(userId)).count();
+//		Long potholeIreported = ticket.stream()
+//				.filter(user -> user.getUser().getUserId().equals(userId)).count();
 
+		Long potholeIreported = ticket.stream()
+			    .filter(user -> user.getUser().getUserId().equals(userId))
+			    .count();
+          System.out.println("this is output" + potholeIreported);
+			if (potholeIreported == null) {
+			    potholeIreported = 0L;
+			    }
+		
 		HomeResponce homeResponce = new HomeResponce();
 		homeResponce.setPotholeIreport(potholeIreported);
 		homeResponce.setTotalPotholeReported(totalPothole);
