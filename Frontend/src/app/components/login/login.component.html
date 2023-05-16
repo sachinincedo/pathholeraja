@@ -44,8 +44,8 @@
           <div [ngClass]="
           { 'alert-red': text ==='Invalid email or password'}">
               <p>{{text}}</p>
-          </div>
-          <button (click)="login()" type="submit" class="btn btn-primary btn-block mb-4">
+        </div>
+          <button  (click)="login()" type="submit" class="btn btn-primary btn-block mb-4" [disabled]="!myForm.valid || isEmailInvalid() || isPasswordInvalid()">
             Login
           </button>
       </form>

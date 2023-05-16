@@ -14,7 +14,9 @@
                     <input #fileInput (change)="onSelectFile($event)"  
                         class="box-feild" name="file" accept="image/png, image/jpeg, image/jpg"
                         type="file" required />
-                     
+                        <div *ngIf="myForm.submitted && myForm.controls.file.errors?.required" class="text-danger">
+                          Please upload an image.
+                        </div>
                   </div>
             </div>
         </div>
