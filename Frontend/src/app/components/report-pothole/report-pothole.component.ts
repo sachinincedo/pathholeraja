@@ -61,7 +61,13 @@ export class ReportPotholeComponent implements OnInit {
     this.imgBase64 = base64String;
     this.imagePath = this.sanitizer.bypassSecurityTrustResourceUrl(this.imgBase64);  
   }
-  
+
+  enforceCharacterLimit(event: any) {
+    const input = event.target as HTMLInputElement;
+    if (input.value.length > 6) {
+      input.value = input.value.slice(0, 6);
+    }
+  }
 submitForm() {
   if (!this.file) {
     alert("No file selected");

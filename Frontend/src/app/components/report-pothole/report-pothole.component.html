@@ -57,7 +57,7 @@
                 </div>
                 <!-- Pincode Box  -->
                 <div class="form-outline mb-4">
-                  <input type="number" id="form7Example4" name="PinCode" class="form-control" [(ngModel)]="pinCode" placeholder="PinCode" required />
+                  <input type="number" id="form7Example4" name="PinCode" class="form-control" [(ngModel)]="pinCode" placeholder="PinCode" required (input)="enforceCharacterLimit($event)"/>
                   <div *ngIf="myForm.submitted && myForm.controls.PinCode.errors?.required" class="text-danger">
                         Pincode is required.
                   </div>

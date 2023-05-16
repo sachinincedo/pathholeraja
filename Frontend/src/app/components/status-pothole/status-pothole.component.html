@@ -19,7 +19,7 @@
                     <p>No Potholes to display</p>
                   </div>
                   <div class="row" *ngFor="let item of items| slice:0:showCountOfPost; let i=index" >
-                      <div *ngIf="items.length > 1" class="col-3 dis">
+                      <div *ngIf="items.length > 0" class="col-3 dis">
                         <p>{{item.ticketId}}</p>
                         <span class="status-outer">
                             <div [ngClass]="{

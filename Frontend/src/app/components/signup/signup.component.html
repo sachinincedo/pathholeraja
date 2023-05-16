@@ -4,7 +4,7 @@
             <h2 class="fw-bold ">Create A Login</h2>
             <hr/>
         </div>
-        <form class="width"  >
+        <form class="width"  #myform >
             <!-- First Name input -->
             <div class="form-outline mb-4">
                 <input type="text" id="firstName" name="firstName" class="form-control" [(ngModel)]="firstName" placeholder="First Name" required/>
@@ -20,7 +20,11 @@
             <!-- Password input -->
             <div class="form-outline mb-4">
               <input type="password" id="password" name="password" class="form-control"  [(ngModel)]="password" placeholder="Password" required/>
+              <!-- <div *ngIf="passwordTouched && !isPasswordValid()" class="text-danger">
+                Password should be at least 8 characters long.
+              </div> -->
             </div>
+            
             <div>
                 <p class="account-line">Already have an account? <a routerLink="../login">Log In</a></p>
             </div>
