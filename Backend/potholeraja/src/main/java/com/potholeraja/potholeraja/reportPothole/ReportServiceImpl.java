@@ -61,7 +61,7 @@ public class ReportServiceImpl implements ReportService {
 		ticket.setBreadth(reportRequest.getBreadth());
 		ticket.setDepth(reportRequest.getDepth());
 		ticket.setSeverity(reportRequest.getSeverity());
-		ticket.setStatus(StatusEnum.UNDERPROGRESS);
+		ticket.setStatus(StatusEnum.WIP);
 		ticket.setTicketDescription(reportRequest.getTicketDescription());
 		ticket.setPremise(reportRequest.getPremise());
 		ticket.setVolunteer(reportRequest.getVolunteer());
