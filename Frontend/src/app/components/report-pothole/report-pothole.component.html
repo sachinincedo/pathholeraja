@@ -5,7 +5,7 @@
       <form class="space-header-below" #myForm="ngForm" >
         <div class="card">
             <div class="step1">
-                <p>Step 1 - Take a picture ( Not Mandatory) </p>
+                <p>Step 1 - Take a picture * </p>
                 <span>Please upload an image for the pothole</span>
             </div>
             <!-- Upload The Image  -->
@@ -14,12 +14,13 @@
                     <input #fileInput (change)="onSelectFile($event)"  
                         class="box-feild" name="file" accept="image/png, image/jpeg, image/jpg"
                         type="file" required />
+                     
                   </div>
             </div>
         </div>
         <div class="card">
             <div class="step2">
-              <p>Step 2 - Location* (  Mandatory) </p>
+              <p>Step 2 - Location*  </p>
               <span>Are you in location where the pothole is ?</span>
             </div>
             <!-- Location Check Box  -->

@@ -12,13 +12,21 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent implements OnInit {
   // Variables Declared 
     email: string='';
-    password: string='';
+    password: any='';
     text : string='';
     @ViewChild('myForm') myForm!: NgForm;
 
     constructor(private apiService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+  isPasswordInvalid(): boolean {
+    return this.password && this.password.length < 8;
+  }
+  emailTouched = false;
+  isEmailInvalid(): boolean {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return this.emailTouched && !emailRegex.test(this.email);
   }
  // Login Button Function 
   login(){

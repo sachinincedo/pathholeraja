@@ -6,12 +6,18 @@
       <form class="width" #myForm="ngForm">
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <input type="email" id="email" name="email" class="form-control"  [(ngModel)]="email" placeholder="Login ID"  required/>
+            <input type="email" id="email" name="email" class="form-control"  [(ngModel)]="email" placeholder="Login ID"  required (blur)="emailTouched = true" />
+            <div *ngIf="emailTouched && isEmailInvalid()" class="text-danger">
+              Please enter a valid email address !!!
+            </div>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-4">
             <input type="password" id="password" name="password" class="form-control" [(ngModel)]="password" placeholder="Password" required/>
+            <div *ngIf="isPasswordInvalid()" class="text-danger">
+              Password should be between 8 and 15 characters long.
+            </div>
           </div>
 
           <!-- Remeber Me Button -->
