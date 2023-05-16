@@ -5,7 +5,7 @@
       <form class="space-header-below" #myForm="ngForm" >
         <div class="card">
             <div class="step1">
-                <p>Step 1 - Take a picture * </p>
+                <p>Step 1 - Take a picture*</p>
                 <span>Please upload an image for the pothole</span>
             </div>
             <!-- Upload The Image  -->
@@ -15,15 +15,15 @@
                         class="box-feild" name="file" accept="image/png, image/jpeg, image/jpg"
                         type="file" required />
                         <div *ngIf="myForm.submitted && myForm.controls.file.errors?.required" class="text-danger">
-                          Please upload an image.
+                          Please upload an image
                         </div>
                   </div>
             </div>
         </div>
         <div class="card">
             <div class="step2">
-              <p>Step 2 - Location*  </p>
-              <span>Are you in location where the pothole is ?</span>
+              <p>Step 2 - Location  </p>
+              <span>Are you in location where the pothole is ? *</span>
             </div>
             <!-- Location Check Box  -->
             <div class="radio-btn">
@@ -38,7 +38,7 @@
             </div>
             <div class="step3">
               <div class="step3">
-                <span> Addition Information</span>
+                <span> Addition Information*</span>
               </div>
               <div class="more-info">
                 <p> Please Give us the crossroads of this pothole</p>

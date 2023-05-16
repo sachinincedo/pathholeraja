@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { SignupService } from 'src/app/services/signup.service';
@@ -13,6 +14,7 @@ export class SignupComponent implements OnInit {
   lastName: string='';
   email: string='';
   password: any='';
+  @ViewChild('myForm') myForm!: NgForm;
   constructor(private apiService: SignupService,private router: Router) { }
   ngOnInit(): void {
     
