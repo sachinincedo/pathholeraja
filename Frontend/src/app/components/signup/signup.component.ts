@@ -17,6 +17,23 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     
   }
+   emailTouched = false;
+  isEmailInvalid(): boolean {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return this.emailTouched && !emailRegex.test(this.email);
+  }
+  isFirstNameInvalid(): boolean {
+    const firstNameRegex = /^[a-zA-Z\s]*$/;
+    return !firstNameRegex.test(this.firstName);
+  }
+  isLastNameInvalid() : boolean{
+    const lastNameRegex = /^[a-zA-Z\s]*$/;
+    return !lastNameRegex.test(this.lastName);
+  }
+  isPasswordInvalid(): boolean {
+    return this.password && this.password.length < 8;
+  }
+  
   signup() {
     //SENDING USER OBJECT TO SERVER FOR CREATING THIS USER LOGIN 
     const user = {

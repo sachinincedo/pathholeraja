@@ -16,3 +16,8 @@
 .width{
     padding: 20px;
 }
+.text-danger{
+    padding: 5px;
+    font-size: small;
+    font-weight: 500;
+}

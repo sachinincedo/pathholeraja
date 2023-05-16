@@ -7,22 +7,31 @@
         <form class="width"  #myform >
             <!-- First Name input -->
             <div class="form-outline mb-4">
-                <input type="text" id="firstName" name="firstName" class="form-control" [(ngModel)]="firstName" placeholder="First Name" required/>
-            </div>
+                <input type="text" id="firstName" name="firstName" class="form-control" [(ngModel)]="firstName" placeholder="First Name" required pattern="[a-zA-Z ]*"/>
+                <div *ngIf="isFirstNameInvalid()" class="text-danger">
+                  Please enter a valid first name with alphabets only !!
+                </div>
+              </div>
             <!-- Last Name input -->
             <div class="form-outline mb-4">
-              <input type="text" id="lastName" name="lastName" class="form-control" [(ngModel)]="lastName" placeholder="Last Name" required/>
+              <input type="text" id="lastName" name="lastName" class="form-control" [(ngModel)]="lastName" placeholder="Last Name" required pattern="[a-zA-Z ]*"/>
+              <div *ngIf="isLastNameInvalid()" class="text-danger">
+                Please enter a valid Last name with alphabets only !!
+              </div>
             </div>
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="email" name="email" class="form-control"[(ngModel)]="email" placeholder="Email Id" required />
+              <input type="email" id="email" name="email" class="form-control"[(ngModel)]="email" placeholder="Email Id" required (blur)="emailTouched = true" />
+              <div *ngIf="emailTouched && isEmailInvalid()" class="text-danger">
+                Please enter a valid email address !!!
+              </div>
             </div>
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="password" name="password" class="form-control"  [(ngModel)]="password" placeholder="Password" required/>
-              <!-- <div *ngIf="passwordTouched && !isPasswordValid()" class="text-danger">
-                Password should be at least 8 characters long.
-              </div> -->
+              <input type="password" id="password" name="password" class="form-control"  [(ngModel)]="password" placeholder="Password" required minlength="8" maxlength="15" />
+              <div *ngIf="isPasswordInvalid()" class="text-danger">
+                Password should be between 8 and 15 characters long.
+              </div>
             </div>
             
             <div>
