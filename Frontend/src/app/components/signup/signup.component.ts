@@ -52,7 +52,7 @@ export class SignupComponent implements OnInit {
           this.router.navigate(['/login']);
         }
         else{
-          this.router.navigate(['/login']);
+          this.router.navigate(['/signup']);
         }
       },
       error => console.log(error)

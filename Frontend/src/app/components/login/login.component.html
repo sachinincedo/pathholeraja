@@ -3,7 +3,7 @@
       <div class="heading-login">
           <h2 class="fw-bold mb-2 my-5">Account Login</h2>
       </div>
-      <form class="width" #myForm="ngForm">
+      <form class="width" #myForm="ngForm" >
           <!-- Email input -->
           <div class="form-outline mb-4">
             <input type="email" id="email" name="email" class="form-control"  [(ngModel)]="email" placeholder="Login ID"  required (blur)="emailTouched = true" />
@@ -45,7 +45,8 @@
           { 'alert-red': text ==='Invalid email or password'}">
               <p>{{text}}</p>
         </div>
-          <button  (click)="login()" type="submit" class="btn btn-primary btn-block mb-4" [disabled]="!myForm.valid || isEmailInvalid() || isPasswordInvalid()">
+          <button  (click)="login()" type="submit" class="btn btn-primary btn-block mb-4"
+           [disabled]="!myForm.valid || isEmailInvalid() || isPasswordInvalid()">
             Login
           </button>
       </form>

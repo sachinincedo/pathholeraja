@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm ,FormGroup, FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { LoginService } from 'src/app/services/login.service';
@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
     password: any='';
     text : string='';
     @ViewChild('myForm') myForm!: NgForm;
+    
 
     constructor(private apiService: LoginService, private router: Router) { }
 
