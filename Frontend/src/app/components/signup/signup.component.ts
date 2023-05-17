@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
   lastName: string='';
   email: string='';
   password: any='';
+  text : string='';
   @ViewChild('myForm') myForm!: NgForm;
   constructor(private apiService: SignupService,private router: Router) { }
   ngOnInit(): void {
@@ -33,7 +34,7 @@ export class SignupComponent implements OnInit {
     return !lastNameRegex.test(this.lastName);
   }
   isPasswordInvalid(): boolean {
-    return this.password && this.password.length < 8;
+    return this.password && this.password.length < 8 || /\s/.test(this.password);
   }
   
   signup() {
@@ -52,7 +53,9 @@ export class SignupComponent implements OnInit {
           this.router.navigate(['/login']);
         }
         else{
-          this.router.navigate(['/signup']);
+          // this.router.navigate(['/login']);
+          this.text = response.status;
+        
         }
       },
       error => console.log(error)

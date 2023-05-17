@@ -24,3 +24,15 @@
 .btn-primary{
     background-color: #103b95 !important;
 }
+.alert-red{
+    padding: 10px 0px;
+}
+.alert-red p{
+    font-weight: 500;
+    padding: 5px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    background-color: red;
+    text-align: center;
+
+}

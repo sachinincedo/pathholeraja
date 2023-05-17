@@ -28,15 +28,20 @@
           </div>
           <!-- Password input -->
           <div class="form-outline mb-4">
-            <input type="password" id="password" name="password" class="form-control" [(ngModel)]="password" placeholder="Password *" required minlength="8" maxlength="15" />
-            <div *ngIf=" isPasswordInvalid()" class="text-danger">
-              Password should be between 8 and 15 characters long.
+            <input type="password" id="password" name="password" class="form-control" 
+            [(ngModel)]="password" placeholder="Password *" required minlength="8" maxlength="15"
+            pattern ="^(?!\s)[\s\S]*$" />
+            <div *ngIf="isPasswordInvalid()" class="text-danger">
+              Password should be between 8 and 15 characters long with no blanks.
             </div>
           </div>
           <div>
             <p class="account-line">Already have an account? <a routerLink="../login">Log In</a></p>
           </div>
           <!-- Submit button -->
+          <div [ngClass]="{ 'alert-red': text ==='BAD_REQUEST'}">
+              <p *ngIf="text ==='BAD_REQUEST'">User Already Exists</p>
+          </div>
           <button type="submit" (click)="signup()" 
           class="btn btn-primary btn-submit btn-block mb-4" [disabled]="!myform.valid" >
             Sign Up
