@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
   TotalPotHoleReported:any = 0;
   PotholeIReported: any= 0 ;
 
-  constructor(private apiService: LoginService) { }
+  constructor(private apiService: LoginService,private router : Router) { }
 
   ngOnInit(): void {
     // HOME API CALLED ON EACH REFRESH OF PAGE 

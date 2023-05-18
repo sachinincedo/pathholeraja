@@ -68,7 +68,8 @@
     font-size: medium;
     color: black !important;
     padding: 20px;
-    margin-left: 40px;
+    /* margin-left: 40px; */
+    margin-right: 20px;
     font-weight: bold;
 }
 .navbar .drop-down ul {

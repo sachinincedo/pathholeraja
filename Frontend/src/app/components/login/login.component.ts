@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
       this.apiService.loginUser(loginDetails).subscribe(
         (response) =>{
            console.log('LOGIN API Response (SERVER)',response);
+           localStorage.setItem('token', response.token)
             if (response.status === "OK") {
                 this.router.navigate(['/home']);
                 // Getting USER ID of User stored in Local

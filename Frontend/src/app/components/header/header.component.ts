@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthGuradService } from 'src/app/authgurad.service';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  openHeader = false;
-  constructor() { }
-  ngOnInit(): void {
-    
+  openHeader: boolean = false;
+
+  constructor(private authGuardService: AuthGuradService,
+              private router: Router)
+  { }
+
+  ngOnInit(): void {  
   }
+
+  logoutSession() {
+    this.router.navigate(['/login'], {replaceUrl: true});
+    this.authGuardService.logout();
+  }
+
 }

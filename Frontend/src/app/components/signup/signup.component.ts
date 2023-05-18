@@ -22,6 +22,7 @@ export class SignupComponent implements OnInit {
   }
    emailTouched = false;
   isEmailInvalid(): boolean {
+    // const emailRegex = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return this.emailTouched && !emailRegex.test(this.email);
   }
@@ -34,7 +35,8 @@ export class SignupComponent implements OnInit {
     return !lastNameRegex.test(this.lastName);
   }
   isPasswordInvalid(): boolean {
-    return this.password && this.password.length < 8 || /\s/.test(this.password);
+    const passwordRegex = /^(?!\s)[\s\S]*$/;
+    return !passwordRegex.test(this.password) && this.password && this.password.length < 8 || /\s/.test(this.password);
   }
   
   signup() {

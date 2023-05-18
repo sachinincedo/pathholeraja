@@ -24,9 +24,14 @@ export class SplashScreenTwoComponent implements OnInit {
   constructor(private router : Router) { }
 
   ngOnInit(): void {
+    if('token' in localStorage) {
+     this.router.navigate(['/home']);
+  }
+  else{
     setTimeout(() => {
       this.router.navigate(['/login']);
     }, 2000);
+  }
   }
 
 }

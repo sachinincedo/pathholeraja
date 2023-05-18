@@ -8,6 +8,7 @@ import { ReportPotholeComponent } from './components/report-pothole/report-potho
 import { StatusPotholeComponent } from './components/status-pothole/status-pothole.component';
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 import { SplashScreenTwoComponent } from './components/splash-screen-two/splash-screen-two.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -17,11 +18,12 @@ const routes: Routes = [
   },
   {
     path:'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path:'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path:'signup',
@@ -29,11 +31,13 @@ const routes: Routes = [
   },
   {
     path:'report-pothole',
-    component: ReportPotholeComponent
+    component: ReportPotholeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path:'status-pothole',
-    component: StatusPotholeComponent
+    component: StatusPotholeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path:'splashscreen',
