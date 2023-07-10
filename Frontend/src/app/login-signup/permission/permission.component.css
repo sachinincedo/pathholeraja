@@ -1,0 +1,24 @@
+.head-span{
+    display: contents;
+}
+.head-span span button{
+    border: none;
+    background-color: white;
+    color: rgb(8, 194, 194);
+}
+.permission-list .row .col-2{
+    margin-top: 15px;
+}
+.permission{
+    color: black !important;
+}
+.txt-permission div{
+    font-weight: 600;
+}
+.txt-permission p{
+    font-size: small;
+}
+.permission-list{
+    padding: 5px;
+    margin-top: 10px;
+}

@@ -1,0 +1,27 @@
+.signup-txt h2{
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 20px;
+}
+.width{
+    padding: 35px;
+}
+.signup-txt p{
+ font-size: small;
+}
+.signup-txt p a{
+    font-weight: 700;
+    color: blue;
+}
+.btn-primary{
+    background-color:  darkblue !important;
+    font-weight: 600;
+}
+.error p{
+    background-color: red;
+    padding: 5px;
+    text-align: center;
+    font-size: small;
+    border-radius: 3px;
+    font-weight: 500;
+}

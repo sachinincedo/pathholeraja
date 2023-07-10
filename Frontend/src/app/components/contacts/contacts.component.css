@@ -1,0 +1,36 @@
+.contact-list-display{
+    color: black !important;
+    margin-top: 10px;
+}
+
+.display{
+    display: flex;
+}
+
+.name{
+    font-size: small;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+.card{
+    border: none;
+    box-shadow: none;
+}
+.row{
+    align-items: center;
+     margin-bottom: 2px;
+}
+.txt{
+    background-color: #7ec7ff;
+    border-radius: 29px;
+    padding: 6px;
+}
+.list-group-item {
+ border: none;  
+
+}
+.list-group-item:hover{
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+
+}

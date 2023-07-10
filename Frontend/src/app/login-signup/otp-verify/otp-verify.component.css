@@ -1,0 +1,63 @@
+.head-span{
+    display: contents;
+}
+.head-span span button{
+    border: none;
+    background-color: white;
+    color: rgb(8, 194, 194);
+}
+.otp{
+    color: black !important;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.otp-box{
+    padding: 5px;
+    margin-top: 10px;
+}
+.heading-2{
+    padding: 5px;
+    
+}
+.not-recieve-otp span{
+    color: rgb(2, 147, 187);
+    font-weight: 600;
+}
+.not-recieve-otp{
+    padding: 5px;
+    margin-top: 10px;
+    font-size: small;
+}
+.err{
+    margin-top: 20px;
+}
+.resend p{
+    background-color: #18e011;
+    padding: 5px;
+    text-align: center;
+    font-size: small;
+    border-radius: 3px;
+    color: white;
+    font-weight: 500;
+}
+.input-otp{
+    border: none;
+    background-color: rgb(247, 247, 247);
+    border-bottom: 2px solid black;
+    width: auto;
+    border-radius: 0px;
+    letter-spacing: 5px;
+}
+.floating-span{
+ font-size: medium;
+}
+.heading-2 .number{
+    color: rgb(2, 147, 187);
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.heading-2 p{
+    margin-bottom: 0px;
+    margin-top: 20px;
+    font-size: medium;
+}

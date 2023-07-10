@@ -1,0 +1,45 @@
+<div class="outer-box">
+    <div class="container-fluid without-footer">
+        <div class="signup-txt">
+            <h2 class="fw-bold ">Create A Account</h2>
+        </div>
+        <form class="width" [formGroup]="signUpForm" >
+            <div class="form-outline mb-4">
+                <input type="text" autocapitalize="sentences" class="form-control" formControlName="phoneNumber"
+                placeholder="Phone Number" aria-label="Text input with dropdown button" 
+                inputmode="decimal"
+                oninput="this.value=this.value.replace(/[^0-9]/g,'').replace(/(\..*)\./g,'$1');"
+                maxlength="10" required >
+              </div>
+              <div class="form-outline mb-4">
+                <input type="email" class="form-control" formControlName="email"
+                placeholder="Email" aria-label="Text input with dropdown button"
+                 required>
+              </div>
+              <div class="form-outline mb-4">
+                <input type="password" class="form-control" formControlName="password"
+                placeholder="Password" aria-label="Text input with dropdown button"
+                inputmode="decimal"
+                maxlength="15" required>
+              </div>
+              <div class="signup-txt">
+                <p class="account-line">
+                  Already have an account?
+                  <a routerLink="../login">
+                    Log In
+                  </a>
+                </p>
+              </div>
+              <div  [ngClass]="
+              { 'error': errorMessage !==''}">
+                <p>{{errorMessage}}</p>
+               
+              </div>
+              <div class="btn-box">
+                <button (click)="onSignUp()" type="submit" class="btn btn-primary btn-block mb-4">
+                    SignUp
+                </button>
+              </div>
+        </form>
+    </div>
+</div>

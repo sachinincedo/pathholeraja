@@ -1,0 +1,68 @@
+.color-txt{
+    color: black !important;
+}
+.contact-list-display{
+    color: black !important;
+    margin-top: 10px;
+}
+
+.display{
+    display: flex;
+}
+.lists{
+    padding: 8px;
+    
+}
+.number-list{
+    background-color: #eeeeee8f;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: small;
+}
+.numb{
+    color: blue;
+}
+.numb:hover{
+    text-decoration: underline;
+}
+.fw-bold{
+    font-weight: 600;
+}
+.number-list:hover{
+    background-color: #7ec7ff;
+}
+.name{
+    font-size: small;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+.card{
+    border: none;
+    box-shadow: none;
+}
+.row{
+    align-items: center;
+     margin-bottom: 2px;
+}
+.txt{
+    background-color: #7ec7ff;
+    border-radius: 29px;
+    padding: 6px;
+}
+.list-group-item {
+ border: none;  
+
+}
+.btn-assign{
+    background-color: rgb(233, 231, 231);
+    color: black !important;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+.btn-assign span{
+    margin-left: 15px;
+    font-size: small;
+    font-weight: 500;
+}

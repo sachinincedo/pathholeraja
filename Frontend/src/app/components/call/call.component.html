@@ -1,0 +1,134 @@
+<div class="outer-box">
+ <div class="container-fluid with-footer call">
+    <div class="heading">
+        <span class="head-span calls">
+            <span (click)="backButton()"><i class="fa fa-angle-left"></i></span>
+            <span>Call</span>
+            <span routerLink="../dialpad" ><img src="assets/icons/touch.png" height="20" /></span>
+        </span>
+    </div>
+    <div class="contact-list-display">
+        <div class="card card-default" id="card_contacts">
+          <div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">
+              <ul class="list-group pull-down" id="contact-list">
+                  <li class="list-group-item" >
+                      <div class="row ">
+                          <div class="col-3 px-0">
+                              <img  src="http://demos.themes.guide/bodeo/assets/images/users/w104.jpg" height="50" width="50" alt="Debbie Schmidt" class="img-fluid rounded-circle d-block mx-auto">
+                          </div>
+                          <div class="col-9 ">
+                              <label class="name lead">Anmol reshi</label>
+                              <br/>
+                              <span class="text-muted small">+ {{number}}</span>
+                          </div>
+                      </div>
+                      <hr/>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      </div>
+      <div class="assign-no">
+        <div class="btn-assign"> 
+         <span>Assign Number</span>
+         <span><i class="fa fa-plus"></i></span>
+         </div>
+      </div>
+      <br/>
+      <app-search-bar placeholderValue="Call History"></app-search-bar>
+      <div class="history">
+         <div class="row">
+             <div class="col-3">
+                <img src="assets/icons/incomming-call.png"  height="25" width="25" alt=""/>
+                <!-- <img src="/src/assets/icons/outgoing-call.png"  height="25" width="25" alt=""/> -->
+             </div>
+             <div class="col-6 name-call">
+                <span class=""> Arpit Goel</span>
+                <br/>
+                <span> +91 2484848849</span>
+               
+             </div>
+             <div class="col-3" routerLink="/call/outgoing-call">
+                <span class="fa fa-phone txt text-muted" data-toggle="tooltip" title="" data-original-title="(867) 322-1852"></span>
+             </div>
+         </div>
+         <div class="row">
+            <div class="col-3">
+               <!-- <img src="assets/icons/incomming-call.png"  height="25" width="25" alt=""/> -->
+               <img src="assets/icons/outgoing-call.png"  height="25" width="25" alt=""/>
+            </div>
+            <div class="col-6 name-call">
+               <span class=""> Arpit Goel</span>
+               <br/>
+               <span> +91 2484848849</span>
+              
+            </div>
+            <div class="col-3"  routerLink="/call/outgoing-call">
+               <span class="fa fa-phone txt text-muted" data-toggle="tooltip" title="" data-original-title="(867) 322-1852"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3" >
+               <!-- <img src="assets/icons/incomming-call.png"  height="25" width="25" alt=""/> -->
+               <img src="assets/icons/outgoing-call.png"  height="25" width="25" alt=""/>
+            </div>
+            <div class="col-6 name-call">
+               <span class=""> Arpit Goel</span>
+               <br/>
+               <span> +91 2484848849</span>
+              
+            </div>
+            <div class="col-3"  routerLink="/call/outgoing-call">
+               <span class="fa fa-phone txt text-muted" data-toggle="tooltip" title="" data-original-title="(867) 322-1852"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+               <img src="assets/icons/incomming-call.png"  height="25" width="25" alt=""/>
+               <!-- <img src="assets/icons/outgoing-call.png"  height="25" width="25" alt=""/> -->
+            </div>
+            <div class="col-6 name-call">
+               <span class=""> Arpit Goel</span>
+               <br/>
+               <span> +91 2484848849</span>
+              
+            </div>
+            <div class="col-3">
+               <span class="fa fa-phone txt text-muted" data-toggle="tooltip" title="" data-original-title="(867) 322-1852"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+               <!-- <img src="assets/icons/incomming-call.png"  height="25" width="25" alt=""/> -->
+               <img src="assets/icons/outgoing-call.png"  height="25" width="25" alt=""/>
+            </div>
+            <div class="col-6 name-call">
+               <span class=""> Arpit Goel</span>
+               <br/>
+               <span> +91 2484848849</span>
+              
+            </div>
+            <div class="col-3">
+               <span class="fa fa-phone txt text-muted" data-toggle="tooltip" title="" data-original-title="(867) 322-1852"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+               <!-- <img src="assets/icons/incomming-call.png"  height="25" width="25" alt=""/> -->
+               <img src="assets/icons/outgoing-call.png"  height="25" width="25" alt=""/>
+            </div>
+            <div class="col-6 name-call">
+               <span class=""> Arpit Goel</span>
+               <br/>
+               <span> +91 2484848849</span>
+              
+            </div>
+            <div class="col-3">
+               <span class="fa fa-phone txt text-muted" data-toggle="tooltip" title="" data-original-title="(867) 322-1852"></span>
+            </div>
+        </div>
+      </div>
+    <app-footer phoneSelected="true"></app-footer>
+ </div>
+</div>
+

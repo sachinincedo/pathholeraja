@@ -1,0 +1,72 @@
+
+<div class="outer-box">
+    <div class="container-fluid with-call">
+        <div class="box-call">
+             <div class="img-person">
+                <img src="assets/icons/man.png"  height="70"  alt="" />
+             </div>
+             <div class="person">
+                  <p class="person-name">Anmol Reshi</p>
+                  <p class="person-number">+91 7382648463</p>
+                  <p class="person-duration">00:33</p>
+             </div>
+             <div class="feature">
+               <div class="call-btn">
+                <div (click)="mute()">
+                        <div class="icon" *ngIf="!muteSelected">
+                            <!-- <span *ngIf="muteSelected"> -->
+                                <img src="assets/icons/mute-btn.png" height="30" alt="" />  
+                            <!-- </span> -->
+                        </div>
+                        <div class="mute-selected" *ngIf="muteSelected">
+                        <!-- <span  class="mute-selected"> -->
+                            <img src="assets/icons/mute-clicked.png" height="30" alt="">
+                        <!-- </span> -->
+                        </div>
+                </div>
+                <div (click)="speaker()">
+                    <div class="icon" *ngIf="!speakerSelected">
+                        <!-- <span *ngIf="muteSelected"> -->
+                            <img src="assets/icons/speaker-btn.png" height="30" alt="" />  
+                        <!-- </span> -->
+                    </div>
+                    <div class="mute-selected" *ngIf="speakerSelected">
+                    <!-- <span  class="mute-selected"> -->
+                        <img src="assets/icons/speaker-clicked.png" height="30" alt="">
+                    <!-- </span> -->
+                    </div>
+            </div>
+            <div (click)="dialpad()">
+                <div class="icon" *ngIf="!dialSelected">
+                    <!-- <span *ngIf="muteSelected"> -->
+                        <img src="assets/icons/dialpad.png" height="30" alt="" />  
+                    <!-- </span> -->
+                </div>
+                <div class="mute-selected" *ngIf="dialSelected">
+                <!-- <span  class="mute-selected"> -->
+                    <img src="assets/icons/diapad-clikced.png" height="30" alt="">
+                <!-- </span> -->
+                </div>
+        </div>
+                   
+               </div>
+            <!-- <div class="call-btn">
+                <div class="icon">
+                         <img src="assets/icons/mute-btn.png" height="30" alt="" />  
+                </div>
+                <div class="icon">
+                    <img src="assets/icons/mute-btn.png" height="30" alt="" />  
+                </div>
+                <div class="icon">
+                    <img src="assets/icons/mute-btn.png" height="30" alt="" />  
+                </div>
+           </div> -->
+             </div>
+             <div class="cut-btn"  (click)="callCut()">
+                <div class="btn-cut">
+                    <img src="assets/icons/cut.png" height="40" alt="">
+                </div>
+             </div>
+       </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+
+<div class="outer-box">
+    <div class="container-fluid with-footer color-txt">
+        <div class="heading">
+            <span class="head-span">
+                <span (click)="backButton()"><i class="fa fa-angle-left"></i></span>
+                <span>Numbers</span>
+            </span>
+        </div>
+        <div class="contact-list-display">
+            <div class="card card-default" id="card_contacts">
+              <div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">
+                  <ul class="list-group pull-down" id="contact-list">
+                      <li class="list-group-item" >
+                          <div class="row ">
+                              <div class="col-3 px-0">
+                                  <img  src="http://demos.themes.guide/bodeo/assets/images/users/w104.jpg" height="50" width="50" alt="Debbie Schmidt" class="img-fluid rounded-circle d-block mx-auto">
+                              </div>
+                              <div class="col-9 ">
+                                  <label class="name lead">Anmol reshi</label>
+                                  <br/>
+                                  <span class="text-muted small">+97 7656465665</span>
+                              </div>
+                          </div>
+                          <hr/>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          </div>
+          <div class="assign-no">
+            <div class="btn-assign"> 
+             <span>Assign Number</span>
+             <span><i class="fa fa-plus"></i></span>
+             </div>
+          </div>
+          <br/>
+      <app-search-bar placeholderValue="Search for Numbers" (searchField)="updateSearchValue($event)" ></app-search-bar>
+     <div class="row lists">
+        <div class="col-12 number-list">
+            <div class="fw-bold">Anmol Group</div>
+            <div class="numb">+91 8492969336</div>
+        </div>
+     </div>
+     <div class="row lists">
+        <div class="col-12 number-list">
+            <div class="fw-bold">Arpit Group</div>
+            <div class="numb">+91 8492969336</div>
+        </div>
+     </div>
+     <div class="row lists">
+        <div class="col-12 number-list">
+            <div class="fw-bold">Anil Group</div>
+            <div class="numb">+91 8492969336</div>
+        </div>
+     </div>
+      <app-footer numberSelected="true"></app-footer>
+    </div>
+ </div>

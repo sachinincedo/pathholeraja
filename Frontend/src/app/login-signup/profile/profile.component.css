@@ -1,0 +1,34 @@
+.head-span{
+    display: contents;
+}
+.head-span span button{
+    border: none;
+    background-color: white;
+    color: rgb(8, 194, 194);
+}
+.profile{
+    color: black !important;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.form-control:focus{
+ /* text-decoration: none; */
+ outline:none;
+ box-shadow: none;
+}
+.form-control{
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid black;
+    background-color: rgb(247, 247, 247);
+    /* padding: 2px; */
+    font-size: small;
+}
+.headings{
+    font-size: medium;
+    font-weight: 600;
+    padding: 5px;
+    margin-top: 10px;
+}
+.input-span{
+    padding: 2px;
+}

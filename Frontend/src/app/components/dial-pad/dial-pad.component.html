@@ -1,0 +1,27 @@
+<div class="outer-box">
+    <div class="container-fluid with-footer ">
+
+        <div class="heading">
+            <span class="head-span calls">
+                <span (click)="backButton()"><i class="fa fa-angle-left"></i></span>
+                <span>Dial</span>
+            </span>
+        </div>
+
+        <div class="call-box">
+            <div class="row txts">
+                <div class="row">
+                    <div class="col-4 dialpad-button" *ngFor="let button of dialpadButtons" (click)="selectNumber(button)">
+                    {{ button }}
+                    </div>
+                </div>
+            </div>
+         </div>
+
+        <div class="call-btn row">
+            <button class="btns">CALL</button>
+        </div>
+    
+</div>
+</div>
+ 

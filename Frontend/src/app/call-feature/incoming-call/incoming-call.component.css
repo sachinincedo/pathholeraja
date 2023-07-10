@@ -1,0 +1,48 @@
+.call-btn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+.img-person{
+    display: flex;
+    justify-content: center;
+}
+.person-name{
+    text-align: center;
+}
+.person-number{
+    text-align: center;
+}
+.names{
+    font-size: medium;
+    font-weight: 600;
+}
+.cut-btn{
+    background-color: black;
+    border-radius: 32px;
+    border: 2px solid #d90f0f;
+    padding: 10px;  
+}
+.cut-btn:hover{
+    background-color: white;
+}
+.recived-btn:hover{
+    background-color: white;
+}
+.recived-btn{
+    background-color: black;
+    border-radius: 32px;
+    border: 2px solid #42fa42;
+    padding: 10px;
+}
+.box-call{
+    /* padding: 10px; */
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    height: -webkit-fill-available;
+    /* align-items: stretch; */
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
