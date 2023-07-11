@@ -1,0 +1,37 @@
+<div class="outer-box">
+   <div class="container-fluid with-footer">
+    <div class="heading">
+      <span class="head-span">
+          <span (click)="backButton()"><i class="fa fa-angle-left"></i></span>
+          <span>Contacts</span>
+      </span>
+  </div>
+  <div class="contact-list-display">
+    <div class="card card-default" id="card_contacts">
+      <div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">
+          <ul class="list-group pull-down" id="contact-list">
+        
+              <li class="list-group-item" *ngFor="let contact of contacts">
+                  <div class="row ">
+                      <div class="col-3 px-0">
+                          <img  [src]="contact.image" height="50" width="50" alt="Debbie Schmidt" class="img-fluid rounded-circle d-block mx-auto">
+                      </div>
+                      <div class="col-6 ">
+                          <label class="name lead">{{ contact.name }}</label>
+                          <br/>
+                          <span class="text-muted small">{{ contact.phone }}</span>
+                          <br>
+                      </div>
+                      <div class="col-3" routerLink="/call/outgoing-call">
+                        <span class="fa fa-phone txt text-muted" data-toggle="tooltip" title="" data-original-title="(867) 322-1852"></span>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+          <!--/contacts list-->
+      </div>
+  </div>
+  </div>
+     <app-footer contactSelected="true"></app-footer>
+   </div>
+</div>

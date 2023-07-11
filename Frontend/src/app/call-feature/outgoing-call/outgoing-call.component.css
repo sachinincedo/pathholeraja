@@ -1,0 +1,52 @@
+.box-call{
+    /* padding: 10px; */
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    height: -webkit-fill-available;
+    /* align-items: stretch; */
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+.call-btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.cut-btn {
+    padding: 10px;  
+    display: flex;
+    justify-content: center;
+}
+.mute-selected{
+    background-color: white;
+    border-radius: 30px;
+    padding: 10px;
+    border: 2px solid gainsboro;
+}
+.icon{
+    /* background-color: white; */
+    border-radius: 30px;
+    padding: 10px;
+    border: 2px solid white;
+}
+.btn-cut{
+    
+border: 2px solid rgb(232, 0, 0);
+padding: 10px;
+border-radius: 30px;
+
+}
+.btn-cut:hover{
+    background-color: white;
+}
+.img-person{
+    display: flex;
+    justify-content: center;
+}
+.person{
+    text-align: center;
+    
+}

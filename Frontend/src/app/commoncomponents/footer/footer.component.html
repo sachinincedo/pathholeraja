@@ -1,0 +1,40 @@
+<div class="row bottom-links ">
+    <div class="col-12 navbar-nav">
+        <a class="nav-item nav-link" routerLink="../call">
+            <span class="svg-icon"  *ngIf="!phoneSelected">
+                <img   src="assets/icons/phone.png"/>
+            </span>
+            <span class="svg-icon" *ngIf="phoneSelected" >
+                <img src="assets/icons/phone-call.png">
+            </span>
+        </a>
+        <a class="nav-item nav-link" routerLink="../contacts" >
+            <span class="svg-icon" *ngIf="!contactSelected" >
+                <img src="assets/icons/contacts.png">
+            </span>
+            <span class="svg-icon" *ngIf="contactSelected" >
+                <img src="assets/icons/contacts-click.png">
+            </span>
+        </a>
+        <a class="nav-item nav-link with-notification" routerLink="../numbers" >
+            <span>
+                <span class="svg-icon svg-icon-call" *ngIf="!numberSelected">
+                    <img src="assets/icons/list.png">
+                </span>
+                <span class="svg-icon svg-icon-call" *ngIf="numberSelected" >
+                    <img src="assets/icons/list-clicked.png">
+                </span>
+            </span>
+        </a>
+        <a class="nav-item nav-link with-notification" routerLink="../settings" >
+            <span>
+                <span class="svg-icon-msg" *ngIf="!settingSelected ">
+                    <img src="assets/icons/settings.png">
+                </span>
+                <span class="svg-icon-msg" *ngIf="settingSelected" >
+                    <img src="assets/icons/setting-clicked.png" >
+                </span>
+            </span>
+        </a>
+    </div>
+</div>

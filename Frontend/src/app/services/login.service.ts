@@ -7,10 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
-  private loginurl = 'http://159.89.166.145:8080/api/v1/login';
-  private homeurl = 'http://159.89.166.145:8080/api/v1/home';
-  private reportpothole = 'http://159.89.166.145:8080/api/v1/potholes/report';
-  private statusurl = 'http://159.89.166.145:8080/api/v1/home/status';
+  private loginurl = 'http://3.223.95.128:8080/api/v1/login';
+  private homeurl = 'http://3.223.95.128:8080/api/v1/home';
+  private reportpothole = 'http://3.223.95.128:8080/api/v1/potholes/report';
+  private statusurl = 'http://3.223.95.128:8080/api/v1/home/status';
+  
   constructor(private http: HttpClient) { }
 
   loginUser(user:any): Observable<any> {

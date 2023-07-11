@@ -1,0 +1,33 @@
+.dialpad-button {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .dialpad-button:hover {
+    cursor: pointer;
+    background-color: #e9ecef;
+  }
+  .txts{
+    color: black !important;
+  }
+  .call-box{
+    /* margin-top: 5px; */
+  }
+  .btns{
+    width: -webkit-fill-available;
+    color: white;
+    background-color: dodgerblue;
+    font-weight: 600;
+    /* border-radius: 5px; */
+    padding: 8px;
+    border: none;
+  }
+
+  .call-btn{
+    width: 100%;
+    position: absolute;
+    bottom: 0em;
+  }

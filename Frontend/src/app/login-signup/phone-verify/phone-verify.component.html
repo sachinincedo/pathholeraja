@@ -1,0 +1,62 @@
+<div class="outer-box">
+    <div class="container-fluid without-signup phone">
+        <div class="heading">
+            <span class="head-span">
+                <span (click)="backButton()"><i class="fa fa-angle-left"></i></span>
+                <span>Register</span>
+                <span class="option-span">
+                    <button type="submit" (click)="nextButton()">Next</button>
+                </span>
+            </span>
+        </div>
+        <div class="Heading-2">
+          <p>Phone Number</p>
+          <p class="txt-1">Select Your Country and Enter Phone Number</p>
+        </div>
+    <form [formGroup]="loginForm" >
+        <div class="phone-number">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle btn-md" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ selectedCountry || 'Select' }}
+              </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" (click)="selectCountry('IN')">
+                      <img src="assets/country_flag/IN.png" height="13" width="18"/>
+                      +91 IN
+                    </a>
+                    <a class="dropdown-item" (click)="selectCountry('UK')">
+                      <img src="assets/country_flag/UK.png" height="13" width="18"/>
+                      +44 UK
+                    </a>
+                    <a class="dropdown-item" (click)="selectCountry('JAP')">
+                      <img src="assets/country_flag/JP.png" height="13" width="18"/>
+                      +81 JAP
+                    </a>
+                    <a class="dropdown-item" (click)="selectCountry('GER')">
+                      <img src="assets/country_flag/DR.png" height="13" width="18"/>
+                      +49 GER
+                    </a>
+                    <a class="dropdown-item" (click)="selectCountry('FR')">
+                      <img src="assets/country_flag/FR.png" height="13" width="18"/>
+                      +33 FR
+                    </a>
+                </div>
+            </div>
+         
+            <div class="number-field">
+                <input type="text" autocapitalize="sentences" class="form-control aa" formControlName="phoneNumber"
+                placeholder="Your Phone Number" aria-label="Text input with dropdown button" 
+                inputmode="decimal"  
+                oninput="this.value=this.value.replace(/[^0-9]/g,'').replace(/(\..*)\./g,'$1');"
+                minlength="10" maxlength="10" required >
+            </div>
+        </div>
+    </form>
+        <div class="err">
+                <div  [ngClass]="
+                    { 'error': errorMessage !==''}">
+                    <p>{{errorMessage}}</p>
+                </div>
+        </div>
+   </div>      
+</div>

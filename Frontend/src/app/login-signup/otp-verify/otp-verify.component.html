@@ -1,0 +1,44 @@
+<div class="outer-box">
+    <div class="container-fluid without-signup otp">
+        <div class="heading">
+            <span class="head-span">
+                <span (click)="backButton()"><i class="fa fa-angle-left"></i></span>
+                <span>Verification</span>
+                <span class="option-span">
+                    <button type="submit" (click)="nextButton()">Next</button>
+                </span>
+            </span>
+        </div>
+        <div class="heading-2">
+            <p>We have sent you an SMS with 6 digits OTP at </p>
+            <p class="number">+ {{MobileNo}}</p>
+        </div>
+        <form [formGroup]="loginForm" >
+        <div class="otp-box">
+            <!-- <span class="floating-span">Enter OTP</span> -->
+            <input type="text" autocapitalize="sentences" class="form-control input-otp" 
+            formControlName="verificationCode"
+             maxLength="6" required 
+             placeholder="ENTER OTP"
+            inputmode="decimal"
+            oninput="this.value=this.value.replace(/[^0-9]/g,'').replace(/(\..*)\./g,'$1');" 
+            />
+        </div>
+        <div class="not-recieve-otp">
+            Didn't recieve OTP ? <span (click)="resendOtp()">Resend</span>
+        </div>
+        </form>
+        <div class="err">
+            <div  [ngClass]="
+                { 'error': errorMessage !==''}">
+                <p>{{errorMessage}}</p>
+            </div>
+        </div>
+        <div class="err">
+            <div  [ngClass]="
+                { 'resend': resendText !==''}">
+                <p>{{resendText}}</p>
+            </div>
+        </div>
+    </div>
+</div>

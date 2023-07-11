@@ -1,0 +1,12 @@
+
+<div class="search-div" >
+    <span>
+        <i class="fas fa-search"></i>
+    </span>
+    <input type="text" class="form-control no-border-box" autocapitalize="sentences" placeholder={{placeholderValue}} [readOnly]="notEditable"
+           #search [ngStyle]="searchBar.inputStyle!" [(ngModel)]="searchValue" (keyup)="emitCurrentValue()">
+
+    <span class="cross-btn" *ngIf="searchValue" (click)="clearSearchField()">
+        <i class="fa fa-times-circle"></i>
+    </span>
+</div>

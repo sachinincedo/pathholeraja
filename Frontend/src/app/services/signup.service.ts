@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SignupService {
-   private baseUrl = 'http://159.89.166.145:8080/api/v1/signup';
+  private signup = 'http://3.223.95.128:8080/api/v1/signup';
 
    constructor(private http: HttpClient) { }
  
    createUser(user: any): Observable<any> {
-     return this.http.post(this.baseUrl, user);
+     return this.http.post(this.signup, user);
    }
 }

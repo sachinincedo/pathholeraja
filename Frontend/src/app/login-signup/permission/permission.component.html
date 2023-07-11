@@ -1,0 +1,55 @@
+<div class="outer-box">
+    <div class="container-fluid without-signup permission">
+        <div class="heading">
+            <span class="head-span">
+                <span (click)="backButton()"><i class="fa fa-angle-left"></i></span>
+                <span>Permission</span>
+                <span class="option-span">
+                    <button type="submit" (click)="nextButton()">Done</button>
+                </span>
+            </span>
+        </div>
+        <div class="permission-list">
+           <div class="row">
+              <div class="col-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value=""  id="flexCheckCheck" [(ngModel)]="contactsPermission" (change)="requestContactsPermission()" checked />
+                </div>
+              </div>
+              <div class="col-10 txt-permission">
+                <div >
+                    Contacts
+                </div>
+                <p>Call uses your contacts to lookup the person you are trying to reach.</p>
+              </div>
+           </div>
+           <div class="row">
+              <div class="col-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value=""  id="flexCheckChecke" [(ngModel)]="microphonePermission" (change)="requestMicrophonePermission()" checked />
+                </div>
+              </div>
+              <div class="col-10 txt-permission">
+                <div >
+                  Microphone
+                </div>
+                <p>Call uses your phone's mic to allow you to make voice calls. </p>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value=""  id="flexCheckChecked" 
+                  [(ngModel)]="locationPermission" (change)="requestLocationPermission()"  checked />
+                </div>
+              </div>
+              <div class="col-10 txt-permission">
+                <div >
+                  Location
+                </div>
+                <p>Call uses location to display local tme to help others make a better decision about when and how to reach you.</p>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>

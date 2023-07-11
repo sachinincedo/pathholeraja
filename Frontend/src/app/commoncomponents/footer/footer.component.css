@@ -1,0 +1,106 @@
+.svg-icon img {
+    height: 1.5em;
+    width: 1.5em;
+}
+.without-weight {
+    font-weight: 600 !important;
+}
+.with-notification {
+    display: flex;
+    padding-top: 0px !important;
+}
+.with-notification .number {
+    font-size: 0.9em;
+    background: red;
+    color: white;
+    border-radius: 25px;
+    height: 16px;
+    padding: 0 4px;
+    margin-top: 1px;
+    margin-left: 1px;
+    line-height: 16px;
+}
+/* .navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  } */
+.navbar-nav {
+    flex-direction: row;
+    padding-right: 0;
+    padding: 0 0.5em;
+    display: flex;
+    justify-content: space-between !important;
+}
+.navbar-nav a {
+    padding: 0rem 0rem;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 18px;
+}
+.navbar-nav a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    font-weight: 100;
+}
+.navbar-nav a span {
+    letter-spacing: 0.5px;
+}
+.navbar-nav .icon-text {
+    font-size: 0.82em !important;
+    color: #000;
+}
+.svg {
+    line-height: 14px !important;
+    padding-top: 0px !important;
+}
+.svg .svg-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    font-weight: 100;
+}
+.svg .svg-icon img {
+    height: 2.6em;
+    width: 2em;
+}
+.svg-icon-msg img {
+    height: 1.5em !important;
+    width: 1.5em !important;
+}
+.svg-icon-call img {
+    height: 1.5em;
+    width: 1.5em;
+}
+@media screen and (max-width: 499px) {
+    .bottom-links {
+        width: 100%;
+        bottom: 0px;
+        background: white;
+   }
+    .bottom-links .navbar-nav a {
+        line-height: 1.1em;
+   }
+    .bottom-links .navbar-nav a i {
+        font-size: 1.1em;
+   }
+    .bottom-links .navbar-nav a span {
+        font-size: 0.8em;
+        letter-spacing: 0.5px;
+   }
+    .svg-icon-msg img {
+        height: 1.8em !important;
+        width: 1.8em !important;
+   }
+    .svg-icon-call img {
+        height: 1.65em;
+        width: 1.7em;
+   }
+} 

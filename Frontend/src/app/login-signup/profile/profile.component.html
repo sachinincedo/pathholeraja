@@ -1,0 +1,59 @@
+<div class="outer-box">
+    <div class="container-fluid without-signup profile">
+        <div class="heading">
+            <span class="head-span">
+                <span (click)="backButton()"><i class="fa fa-angle-left"></i></span>
+                <span>Profile</span>
+                <span class="option-span">
+                    <button type="submit" (click)="nextButton()">Next</button>
+                </span>
+            </span>
+        </div>
+        <div class="headings">
+            <p>Profile Details</p>
+        </div>
+        <div class="profile-details">
+            <form  [formGroup]="profileSetupForm">    
+                <!-- <div class="profile-icon">
+                    <img src="assets/icons/svg/member_avatar.svg">
+                </div> -->
+    
+                <div class="input-field-with-label ">
+                    <span class="input-span">
+                        <!-- <span class="floating-span">First Name</span> -->
+                        <input type="text" autocapitalize="sentences" class="form-control tt" 
+                        formControlName="firstName" placeholder="First Name" 
+                        aria-label="Text input with dropdown button"  maxLength="20"
+                        oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');" 
+                         required  />        
+                    </span>
+                </div>       
+                <div class="input-field-with-label ">
+                    <span class="input-span">
+                        <!-- <span class="floating-span">Last Name</span> -->
+                        <input type="text" autocapitalize="sentences" placeholder="Last Name"
+                         class="form-control" 
+                        formControlName="lastName" maxLength="20" 
+                        oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');"  required   />                  
+                    </span>
+                </div>
+                <div class="input-field-with-label ">
+                    <span class="input-span">
+                        <!-- <span class="floating-span">Password</span> -->
+                        <input type="password" class="form-control" 
+                        formControlName="password" placeholder="Password" minlength="8"
+                             maxLength="20" inputmode="decimal"  required />        
+                        
+                    </span>
+                </div>
+    
+            </form>
+            <div class="err">
+                <div  [ngClass]="
+                    { 'error': errorMessage !==''}">
+                    <p>{{errorMessage}}</p>
+                </div>
+        </div>
+        </div>
+    </div>
+</div>
