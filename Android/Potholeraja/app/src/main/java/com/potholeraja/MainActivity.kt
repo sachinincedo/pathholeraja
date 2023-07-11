@@ -16,7 +16,6 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.potholeraja.databinding.ActivityMainBinding
-import com.potholeraja.utlis.Constant
 
 
 class MainActivity : AppCompatActivity() {
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             settings.setSupportMultipleWindows(true)
 
             setBackgroundColor(Color.TRANSPARENT)
-            loadUrl(BuildConfig.BASE_URL.plus(Constant.SPLASH_SCREEN))
+            loadUrl(BuildConfig.BASE_URL)
         }
 
         onBackPressedDispatcher.addCallback(onBackPressedCallback)

@@ -21,12 +21,12 @@ android {
         debug {
             debuggable true
             minifyEnabled false
-            buildConfigField("String", "BASE_URL", '"http://159.89.166.145/"')
+            buildConfigField("String", "BASE_URL", '"http://3.223.95.128/"')
         }
         release {
             minifyEnabled true
             shrinkResources true
-            buildConfigField("String", "BASE_URL", '"http://159.89.166.145/"')
+            buildConfigField("String", "BASE_URL", '"http://3.223.95.128/"')
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
