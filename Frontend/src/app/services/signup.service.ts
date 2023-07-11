@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SignupService {
-  private signup = 'http://3.223.95.128:8080/api/v1/signup';
+  private signup = 'http://localhost:8080/api/v1/signup';
 
    constructor(private http: HttpClient) { }
  
